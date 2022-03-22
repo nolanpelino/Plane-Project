@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class User {
+public class User extends BasicUser{
     private String username;
     private String password;
     private int age;
