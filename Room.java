@@ -14,6 +14,14 @@ public class Room extends Item {
         availability = new ArrayList<Date>();
     }
 
+    public int getRoomNumber() {
+        return this.roomNumber;
+    }
+
+    public int getBeds() {
+        return this.numBeds;
+    }
+
     public void setAvailability(Date day) {
         availability.add(day);
     }
@@ -24,4 +32,6 @@ public class Room extends Item {
         else
             return true;
     }
+
+    
 }

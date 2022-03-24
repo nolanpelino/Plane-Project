@@ -14,19 +14,25 @@ public class User extends BasicUser{
     private ArrayList<HotelBooking> hotelBookings;
 
     public User(String username, String password, int age, String address, boolean hasDisability, boolean passport){
-
+        this.username=username;
+        this.password=password;
+        this.age=age;
+        this.address=address;
+        this.hasDisability=hasDisability;
+        this.passport=passport;
     }
 
     public boolean hasPassport(){
-
+        return passport;
     }
 
     public int getAge(){
-
+        return age;
     }
 
-    public void setFlyer(){
-
+    public void setFrFlyer(){
+        //if three or more flights then set to true
+        frequentFlyer=true;
     }
 
     public void linkFamily(){
