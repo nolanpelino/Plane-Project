@@ -1,17 +1,23 @@
 import java.util.UUID;
 
 public class Flight {
-    private String planeModel;
     private Seat[] seats;
     private int flightlength;
     private boolean hasTV;
     private String departureAirport;
     private String arrivalAirport;
     private UUID id;
+    private String flightNumber;
 
-    public Flight(String planeModel, Seat[] seats, int flightlength, boolean hasTV,
-    String depart, String arrival, UUID id) {
-        //TODO
+    public Flight(Seat[] seats, int flightlength, boolean hasTV,
+    String depart, String arrival, UUID id, String flightNumber) {
+        this.seats = seats;
+        this.flightlength = flightlength;
+        this.hasTV = hasTV;
+        this.departureAirport = depart;
+        this.arrivalAirport = arrival;
+        this.id = id;
+        this.flightNumber = flightNumber;
     }
     public int getLength() {
         return this.flightlength;
