@@ -26,7 +26,7 @@ public class Seat extends Item {
         return this.extraLegRoom;
     }
 
-    public void setAvailability() {
+    public void fillSeat() {
         this.availability = false;
     }
 
