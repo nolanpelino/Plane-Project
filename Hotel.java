@@ -5,6 +5,7 @@ import java.util.UUID;
 public class Hotel {
     private String address;
     private String name;
+    private int price;
     private UUID id;
     private ArrayList<Room> rooms;
     private boolean pool;
