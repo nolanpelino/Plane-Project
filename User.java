@@ -13,15 +13,13 @@ public class User extends BasicUser{
     private ArrayList<PlaneTicket> tickets;
     private ArrayList<HotelBooking> hotelBookings;
 
-    public User(String username, String password, int age, String address, boolean hasDisability, boolean passport){
-        this.username=username;
-        this.password=password;
-        this.age=age;
+    public User(String username, String password, int age, String address, boolean hasDisability,String airportOfOrigin, boolean passport){
+        super(username,age,passport,hasDisability);
+        this.airportOfOrigin=airportOfOrigin;
         this.address=address;
-        this.hasDisability=hasDisability;
         this.passport=passport;
     }
-
+    
     public boolean hasPassport(){
         return passport;
     }
@@ -31,16 +29,16 @@ public class User extends BasicUser{
     }
 
     public void setFrFlyer(){
-        //if three or more flights then set to true
+        if(tickets.)
         frequentFlyer=true;
     }
-
-    public void linkFamily(){
-
+    
+    public void linkFamily(BasicUser family){
+        familyUser.add(family);
     }
 
     public Flight sortFlightsDeparting(String departingAirport){
-
+        
     }
 
     public Flight sortFlightsArrival(String arrivalAirport){
