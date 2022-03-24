@@ -13,6 +13,6 @@ public class Prefrences {
     }
 
     public String getPrefrences(){
-        return "Your prefered plane size is "+planeSize+", your prefered class is "+classPrefrence+".";
+        return "Your prefered plane size is "+planeSize+", your prefered class is "+classPrefrence+".\nOk with layovers: "+layoverPrefrence;
 }
 }
