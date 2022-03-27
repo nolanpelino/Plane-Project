@@ -5,17 +5,17 @@ public class User extends BasicUser{
     private String password;
     private int age;
     private String address;
-    private ArrayList<BasicUser> familyUser;
+    private ArrayList<BasicUser> familyUsers;
     private boolean frequentFlyer;
-    private String airportOfOrigin;
+    private String homeAirport;
     private boolean passport;
     private boolean hasDisability;
     private ArrayList<PlaneTicket> tickets;
     private ArrayList<HotelBooking> hotelBookings;
 
-    public User(String username, String password, int age, String address, boolean hasDisability,String airportOfOrigin, boolean passport) {
+    public User(String username, String password, int age, String address, boolean hasDisability,String homeAirport, boolean passport) {
         super(username,age,passport,hasDisability);
-        this.airportOfOrigin=airportOfOrigin;
+        this.homeAirport = homeAirport;
         this.address=address;
         this.passport=passport;
     }
@@ -25,20 +25,20 @@ public class User extends BasicUser{
     }
     
     public boolean hasPassport() {
-        return passport;
+        return this.passport;
     }
 
     public int getAge() {
-        return age;
+        return this.age;
     }
 
     public void setFrFlyer() {
-        if(tickets.)
-        frequentFlyer=true;
+        if(tickets.size() > 3)
+            frequentFlyer=true;
     }
     
-    public void linkFamily(BasicUser family) {
-        familyUser.add(family);
+    public void linkFamily(BasicUser familyMember) {
+        familyUsers.add(familyMember);
     }
 
     public Flight sortFlightsDeparting(String departingAirport) {
