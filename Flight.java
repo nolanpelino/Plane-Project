@@ -10,7 +10,7 @@ public class Flight {
     private String flightNumber;
 
     public Flight(Seat[] seats, int flightlength, boolean hasTV,
-    String depart, String arrival, UUID id, String flightNumber) {
+    String depart, String arrival, UUID id, String flightNumber, String airline) {
         this.seats = seats;
         this.flightlength = flightlength;
         this.hasTV = hasTV;
@@ -33,8 +33,8 @@ public class Flight {
     public boolean hasTVs() {
         return this.hasTV;
     }
-    public String displayFlight() {
-        return ""; //TODO not sure exactly what to display
+
+    public int getFlightNumber() {
+        return this.flightNumber;
     }
-    
 }

@@ -13,39 +13,43 @@ public class User extends BasicUser{
     private ArrayList<PlaneTicket> tickets;
     private ArrayList<HotelBooking> hotelBookings;
 
-    public User(String username, String password, int age, String address, boolean hasDisability,String airportOfOrigin, boolean passport){
+    public User(String username, String password, int age, String address, boolean hasDisability,String airportOfOrigin, boolean passport) {
         super(username,age,passport,hasDisability);
         this.airportOfOrigin=airportOfOrigin;
         this.address=address;
         this.passport=passport;
     }
+
+    public String getUsername() {
+        return this.username;
+    }
     
-    public boolean hasPassport(){
+    public boolean hasPassport() {
         return passport;
     }
 
-    public int getAge(){
+    public int getAge() {
         return age;
     }
 
-    public void setFrFlyer(){
+    public void setFrFlyer() {
         if(tickets.)
         frequentFlyer=true;
     }
     
-    public void linkFamily(BasicUser family){
+    public void linkFamily(BasicUser family) {
         familyUser.add(family);
     }
 
-    public Flight sortFlightsDeparting(String departingAirport){
+    public Flight sortFlightsDeparting(String departingAirport) {
         
     }
 
-    public Flight sortFlightsArrival(String arrivalAirport){
+    public Flight sortFlightsArrival(String arrivalAirport) {
 
     }
 
-    public Hotel sortHotel(String address){
+    public Hotel sortHotel(String address) {
 
     }
     
