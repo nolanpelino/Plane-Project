@@ -14,5 +14,12 @@ public class InternationalFlight extends Flight {
         this.hasPassport = hasPassport;
     }
     
+    public String getOriginCountry() {
+        return this.originCountry;
+    }
+
+    public String getDestinationCountry() {
+        return this.destinationCountry;
+    }
     
 }
