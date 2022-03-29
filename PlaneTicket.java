@@ -12,7 +12,7 @@ public class PlaneTicket {
     }
 
     public void displayTicket() {
-        System.err.println(passenger.getUsername());
+        System.out.println(passenger.getUsername());
         if(passenger.getAge() < 12)
             System.out.println("Child Passenger");
         else
