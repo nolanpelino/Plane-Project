@@ -93,4 +93,19 @@ public class Hotel {
             printCounter++;
         }
     }
+
+    /**
+     * Books a AVAILABLE room of the users choice and on their stay dates.
+     * @param roomNum
+     * @param stayDates
+     */
+    public void chooseRoom(int roomNum, ArrayList<Date> stayDates) {
+        for (int i = 0; i < rooms.length; i++) {
+            if(roomNum == rooms[i].getRoomNumber()) {
+                for(Date stdt : stayDates) {
+                    rooms[i].setAvailability(stdt);  // Sets availability as unavailable for all days in the passed array
+                }
+            }
+        }
+    }
 }
