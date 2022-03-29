@@ -13,6 +13,16 @@ public class User extends BasicUser{
     private ArrayList<PlaneTicket> tickets;
     private ArrayList<HotelBooking> hotelBookings;
 
+    /**
+     * Class used for interactions that call for a more complex user. Extends BasicUser
+     * @param username
+     * @param password
+     * @param age
+     * @param address
+     * @param hasDisability
+     * @param homeAirport
+     * @param passport
+     */
     public User(String username, String password, int age, String address, boolean hasDisability,String homeAirport, boolean passport) {
         super(username,age,passport,hasDisability);
         this.homeAirport = homeAirport;
@@ -20,29 +30,48 @@ public class User extends BasicUser{
         this.passport=passport;
     }
 
+    /**
+     * Returns the user's username as a string
+     * @return String
+     */
     public String getUsername() {
         return this.username;
     }
     
+    /**
+     * Returns true if the user has a passport
+     * @return boolean
+     */
     public boolean hasPassport() {
         return this.passport;
     }
 
+    /**
+     * Returns the age of the user
+     * @return int
+     */
     public int getAge() {
         return this.age;
     }
 
+    /**
+     * Sets the user's frequent flyer status to true if they have more than 3 lifetime flights
+     */
     public void setFrFlyer() {
         if(tickets.size() > 3)
             frequentFlyer=true;
     }
     
+    /**
+     * Adds a basic user to the modified user's family
+     * @param familyMember
+     */
     public void linkFamily(BasicUser familyMember) {
         familyUsers.add(familyMember);
     }
 
     public Flight sortFlightsDeparting(String departingAirport) {
-        
+        System.out.println("What would ");
     }
 
     public Flight sortFlightsArrival(String arrivalAirport) {
