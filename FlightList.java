@@ -17,7 +17,18 @@ public class FlightList {
             return flightList;
         }
     }
+
+    /**
+     * 
+     * @param keyWord
+     * @return An instance of a flight that contains the same flight number that was passed in
+     */
     public Flight getFlight(String keyWord) {
-        //TODO
+        for (Flight fl : flights) {
+            if(fl.getFlightNumber().equalsIgnoreCase(keyWord))
+            return fl;
+        }
+        System.out.println("Flight not found");
+        return null;
     }
 }

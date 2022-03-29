@@ -5,7 +5,7 @@ public class UserList {
     private ArrayList<User> users;
     
     private UserList() {
-
+        // TODO
     }
 
     public UserList getInstance() {
@@ -18,6 +18,11 @@ public class UserList {
         }
     }
 
+    /**
+     * 
+     * @param userName
+     * @return An instance of a user that matches the passed in Username
+     */
     public User getUser(String userName) {
         for (User us : users) {
             if(us.getUsername().equalsIgnoreCase(userName))
