@@ -7,7 +7,7 @@ public class Hotel {
     private String name;
     private int price;
     private UUID id;
-    private ArrayList<Room> rooms;
+    private Room[] rooms;
     private boolean pool;
     private int stars;
 
@@ -20,7 +20,7 @@ public class Hotel {
      * @param boolean
      * @param UUID
      */
-    public Hotel(ArrayList<Room> rooms, String address, String name, int stars, boolean pool, UUID id) {
+    public Hotel(Room[] rooms, String address, String name, int stars, boolean pool, UUID id) {
         this.rooms = rooms;
         this.address = address;
         this.name = name;
@@ -70,27 +70,26 @@ public class Hotel {
         boolean completelyEmpty;
         int printCounter = 0;
 
-        for(Room rm : rooms) {
+        for(int i = 0; i < rooms.length; i++) {
             completelyEmpty = true;
             for(Date sd : stayDates) {
-                if (rm.getAvailability(sd) == false) {
+                if (rooms[i].getAvailability(sd) == false) {
                     completelyEmpty = false;
                     continue;
                 }
             }
             if (completelyEmpty) {
-                availRooms.add(rm);
-
+                availRooms.add(rooms[i]);
             }
         } // outer-forloop bracket
 
         System.out.println("These are the open rooms for your stay time: \n");
-        for(Room rm : availRooms) {
+        for(int i = 0; i < rooms.length; i++) {
             if (printCounter == 3) {
                 System.out.println("\n");
                 printCounter = 0;
             }
-            System.out.println(rm.getRoomNumber() + "   ");
+            System.out.println(rooms[i].getRoomNumber() + "   ");
             printCounter++;
         }
     }
