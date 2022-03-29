@@ -6,9 +6,10 @@ public class InternationalFlight extends Flight {
     private boolean hasPassport;
 
     public InternationalFlight(String planeModel, Seat[] seats, int flightlength, boolean hasTV, String depart,
-            String arrival, UUID id, String originCountry, String destinationCountry,
+            String arrival, UUID id, String flightNumber, String airline,
+            int arrivalTime, int departureTime, String originCountry, String destinationCountry,
             boolean hasPassport) {
-        super(planeModel, seats, flightlength, hasTV, depart, arrival, id);
+        super(seats, flightlength, hasTV, depart, arrival, id, destinationCountry, airline, arrivalTime, departureTime);
         this.originCountry = originCountry;
         this.destinationCountry = destinationCountry;
         this.hasPassport = hasPassport;
@@ -20,6 +21,10 @@ public class InternationalFlight extends Flight {
 
     public String getDestinationCountry() {
         return this.destinationCountry;
+    }
+
+    public boolean getPassport(){
+    	return this.hasPassport;
     }
     
 }
