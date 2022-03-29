@@ -35,7 +35,7 @@ public class Flight {
         return this.hasTV;
     }
 
-    public int getFlightNumber() {
+    public String getFlightNumber() {
         return this.flightNumber;
     }
 
