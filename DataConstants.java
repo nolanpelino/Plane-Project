@@ -34,6 +34,7 @@ public abstract class DataConstants {
     protected static final String FLIGHT_ARRIVAL = "flightArrival";
     protected static final String FLIGHT_ID = "flightID";
     protected static final String FLIGHT_NUMBER = "flightNumber";
+    protected static final String FLIGHT_AIRLINE = "flightAirline";
 
 
 

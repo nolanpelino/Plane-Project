@@ -1,6 +1,6 @@
 [
     {
-        "seats":[{"price":"0","seatSection":"First Class","row":"1","seatPosition":"A","extraLegRoom":true},
+        "flightseats":[{"price":"0","seatSection":"First Class","row":"1","seatPosition":"A","extraLegRoom":true},
             {"price":"0","seatSection":"First Class","row":"1","seatPosition":"B","extraLegRoom":true},
             {"price":"0","seatSection":"First Class","row":"1","seatPosition":"C","extraLegRoom":true},
             {"price":"0","seatSection":"First Class","row":"1","seatPosition":"D","extraLegRoom":true},
@@ -31,12 +31,12 @@
             {"price":"0","seatSection":"Business","row":"5","seatPosition":"E","extraLegRoom":false},
             {"price":"0","seatSection":"Business","row":"5","seatPosition":"F","extraLegRoom":false}],
         "flightlength":250,          
-        "hasTV":true,
-        "depart":"CLT",
-        "arrival":"ALT",
-        "id":"0ebbf98a-4668-452f-a973-c370e1e40a52",
+        "flightTV":true,
+        "flightDeparture":"CLT",
+        "flightArrival":"ALT",
+        "flightID":"0ebbf98a-4668-452f-a973-c370e1e40a52",
         "flightNumber":"2157",
-        "airline":"American"
+        "flightAirline":"American"
     }
 
 ] 
