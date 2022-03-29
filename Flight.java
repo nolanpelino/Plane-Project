@@ -9,6 +9,8 @@ public class Flight {
     private String arrivalAirport;
     private UUID id;
     private String flightNumber;
+    private int arrivalTime;
+    private int departureTime;
 
     /**
      * Flight Constructor
@@ -22,7 +24,8 @@ public class Flight {
      * @param String
      */
     public Flight(ArrayList<Seat> seats, int flightlength, boolean hasTV,
-    String depart, String arrival, UUID id, String flightNumber, String airline) {
+    String depart, String arrival, UUID id, String flightNumber, String airline,
+    int arrivalTime, int departureTime) {
         this.seats = seats;
         this.flightlength = flightlength;
         this.hasTV = hasTV;
@@ -30,6 +33,8 @@ public class Flight {
         this.arrivalAirport = arrival;
         this.id = id;
         this.flightNumber = flightNumber;
+        this.arrivalTime = arrivalTime;
+        this.departureTime = departureTime;
     }
 
     /**
@@ -70,6 +75,21 @@ public class Flight {
      */
     public String getFlightNumber() {
         return this.flightNumber;
+    }
+
+    /**
+     * 
+     * @return The arrival time as an integer. Kept in military time
+     */
+    public int getArrivalTime() {
+        return this.arrivalTime;
+    }
+
+    /**
+     * @return The departure time as an integer. Kept in military time
+     */
+    public int getDepartureTIme() {
+        return this.departureTime;
     }
 
     /**
