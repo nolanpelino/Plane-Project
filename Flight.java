@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.UUID;
 
 public class Flight {
-    private ArrayList<Seat> seats;
+    private Seat[] seats;
     private int flightlength;
     private boolean hasTV;
     private String departureAirport;
@@ -23,7 +23,7 @@ public class Flight {
      * @param String
      * @param String
      */
-    public Flight(ArrayList<Seat> seats, int flightlength, boolean hasTV,
+    public Flight(Seat[] seats, int flightlength, boolean hasTV,
     String depart, String arrival, UUID id, String flightNumber, String airline,
     int arrivalTime, int departureTime) {
         this.seats = seats;
@@ -98,9 +98,9 @@ public class Flight {
      */
     public ArrayList getOpenSeats() {
         ArrayList<Seat> opens = new ArrayList<Seat>();
-        for (Seat s : seats) {
-            if (s.getAvailability())
-                opens.add(s);
+        for (int i = 0; i < seats.length; i++) {
+            if (seats[i].getAvailability())
+                opens.add(seats[i]);
         }
         return opens;
     }
@@ -128,10 +128,10 @@ public class Flight {
      * @param String
      */
     public void takeSeat(String seatNum) {
-        for (Seat s : seats) {
-            if (s.getExactPosition().equalsIgnoreCase(seatNum)) {
-                if (s.getAvailability()) {
-                    s.fillSeat();
+        for (int i = 0; i < seats.length; i++) {
+            if (seats[i].getExactPosition().equalsIgnoreCase(seatNum)) {
+                if (seats[i].getAvailability()) {
+                    seats[i].fillSeat();
                     System.out.println("Seat was availible and has been filled.");
                     return;
                 } else {
