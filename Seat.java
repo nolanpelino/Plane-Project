@@ -27,7 +27,8 @@ public class Seat extends Item {
      * @return  Returns a combination of the row number and seat position as a String. 
      */
     public String getExactPosition() {
-        return row + seatPosition;
+        String row2 = Integer.toString(row);
+        return row2 + seatPosition;
     }
 
     /**
