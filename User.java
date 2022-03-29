@@ -70,6 +70,24 @@ public class User extends BasicUser{
         familyUsers.add(familyMember);
     }
 
+    /**
+     * Displays all of te users Boarding Passes
+     */
+    public void printTickets() {
+        for (PlaneTicket tck : tickets) {
+            tck.displayTicket();
+        }
+    }
+
+    /**
+     * Displays all of the users hotel reservations
+     */
+    public void printHotelBookings() {
+        for (HotelBooking htl : hotelBookings) {
+            htl.displayHBooking();
+        }
+    }
+
     public Flight sortFlightsDeparting(String departingAirport) {
         System.out.println("What would ");
     }
