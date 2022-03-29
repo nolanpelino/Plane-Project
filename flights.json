@@ -1,1 +1,42 @@
-[]
+[
+    {
+        "seats":[{"price":"0","seatSection":"First Class","row":"1","seatPosition":"A","extraLegRoom":true},
+            {"price":"0","seatSection":"First Class","row":"1","seatPosition":"B","extraLegRoom":true},
+            {"price":"0","seatSection":"First Class","row":"1","seatPosition":"C","extraLegRoom":true},
+            {"price":"0","seatSection":"First Class","row":"1","seatPosition":"D","extraLegRoom":true},
+            {"price":"0","seatSection":"First Class","row":"1","seatPosition":"E","extraLegRoom":true},
+            {"price":"0","seatSection":"First Class","row":"1","seatPosition":"F","extraLegRoom":true},
+            {"price":"0","seatSection":"First Class","row":"2","seatPosition":"A","extraLegRoom":true},
+            {"price":"0","seatSection":"First Class","row":"2","seatPosition":"B","extraLegRoom":true},
+            {"price":"0","seatSection":"First Class","row":"2","seatPosition":"C","extraLegRoom":true},
+            {"price":"0","seatSection":"First Class","row":"2","seatPosition":"D","extraLegRoom":true},
+            {"price":"0","seatSection":"First Class","row":"2","seatPosition":"E","extraLegRoom":true},
+            {"price":"0","seatSection":"First Class","row":"2","seatPosition":"F","extraLegRoom":true},
+            {"price":"0","seatSection":"Business","row":"3","seatPosition":"A","extraLegRoom":false},
+            {"price":"0","seatSection":"Business","row":"3","seatPosition":"B","extraLegRoom":false},
+            {"price":"0","seatSection":"Business","row":"3","seatPosition":"C","extraLegRoom":false},
+            {"price":"0","seatSection":"Business","row":"3","seatPosition":"D","extraLegRoom":false},
+            {"price":"0","seatSection":"Business","row":"3","seatPosition":"E","extraLegRoom":false},
+            {"price":"0","seatSection":"Business","row":"3","seatPosition":"F","extraLegRoom":false},
+            {"price":"0","seatSection":"Business","row":"4","seatPosition":"A","extraLegRoom":false},
+            {"price":"0","seatSection":"Business","row":"4","seatPosition":"B","extraLegRoom":false},
+            {"price":"0","seatSection":"Business","row":"4","seatPosition":"C","extraLegRoom":false},
+            {"price":"0","seatSection":"Business","row":"4","seatPosition":"D","extraLegRoom":false},
+            {"price":"0","seatSection":"Business","row":"4","seatPosition":"E","extraLegRoom":false},
+            {"price":"0","seatSection":"Business","row":"4","seatPosition":"F","extraLegRoom":false},
+            {"price":"0","seatSection":"Business","row":"5","seatPosition":"A","extraLegRoom":false},
+            {"price":"0","seatSection":"Business","row":"5","seatPosition":"B","extraLegRoom":false},
+            {"price":"0","seatSection":"Business","row":"5","seatPosition":"C","extraLegRoom":false},
+            {"price":"0","seatSection":"Business","row":"5","seatPosition":"D","extraLegRoom":false},
+            {"price":"0","seatSection":"Business","row":"5","seatPosition":"E","extraLegRoom":false},
+            {"price":"0","seatSection":"Business","row":"5","seatPosition":"F","extraLegRoom":false}],
+        "flightlength":250,          
+        "hasTV":true,
+        "depart":"CLT",
+        "arrival":"ALT",
+        "id":"0ebbf98a-4668-452f-a973-c370e1e40a52",
+        "flightNumber":"2157",
+        "airline":"American"
+    }
+
+] 
