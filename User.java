@@ -70,12 +70,34 @@ public class User extends BasicUser{
         familyUsers.add(familyMember);
     }
 
-    public Flight sortFlightsDeparting(String departingAirport) {
+    /**
+     * Displays all of te users Boarding Passes
+     */
+    public void printTickets() {
+        for (PlaneTicket tck : tickets) {
+            tck.displayTicket();
+        }
+    }
+
+    /**
+     * Displays all of the users hotel reservations
+     */
+    public void printHotelBookings() {
+        for (HotelBooking htl : hotelBookings) {
+            htl.displayHBooking();
+        }
+    }
+
+    public ArrayList<Flight> sortFlightsDeparting(String departingAirport) {
         System.out.println("What would ");
     }
 
-    public Flight sortFlightsArrival(String arrivalAirport) {
+    public ArrayList<Flight> sortFlightsArrival(String arrivalAirport) {
 
+    }
+
+    public ArrayList<Flight> sortFlightsByTime() {
+        
     }
 
     public Hotel sortHotel(String address) {
