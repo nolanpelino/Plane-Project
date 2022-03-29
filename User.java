@@ -88,12 +88,16 @@ public class User extends BasicUser{
         }
     }
 
-    public Flight sortFlightsDeparting(String departingAirport) {
+    public ArrayList<Flight> sortFlightsDeparting(String departingAirport) {
         System.out.println("What would ");
     }
 
-    public Flight sortFlightsArrival(String arrivalAirport) {
+    public ArrayList<Flight> sortFlightsArrival(String arrivalAirport) {
 
+    }
+
+    public ArrayList<Flight> sortFlightsByTime() {
+        
     }
 
     public Hotel sortHotel(String address) {
