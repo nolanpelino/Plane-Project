@@ -37,6 +37,10 @@ public class User extends BasicUser{
     public String getUsername() {
         return this.username;
     }
+
+    public String getPassword() {
+        return this.password;
+    }
     
     /**
      * Returns true if the user has a passport
@@ -52,6 +56,34 @@ public class User extends BasicUser{
      */
     public int getAge() {
         return this.age;
+    }
+
+    public String getAddress() {
+        return this.address;
+    }
+
+    public ArrayList<BasicUser> getFamilyUsers() {
+        return this.familyUsers;
+    }
+
+    public String getHomeAirport() {
+        return this.homeAirport;
+    }
+
+    public boolean getHasDisability() {
+        return this.hasDisability;
+    }
+
+    public ArrayList<PlaneTicket> getTickets() {
+        return this.tickets;
+    }
+
+    public ArrayList<HotelBooking> getHotelBookings() {
+        return this.hotelBookings;
+    }
+
+    public boolean getFrFlyer() {
+        return this.frequentFlyer;
     }
 
     /**
