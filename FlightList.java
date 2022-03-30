@@ -5,7 +5,7 @@ public class FlightList {
     private ArrayList<Flight> flights;
 
     private FlightList() {
-        //TODO
+        DataLoaded flightLoader = new DataLoader();
     }
 
     public FlightList getInstance() {
