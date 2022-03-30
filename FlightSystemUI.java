@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.InputMismatchException;
 public class FlightSystemUI {
     Scanner scan = new Scanner(System.in);
     private HotelList hotels;
@@ -38,13 +39,19 @@ public class FlightSystemUI {
         System.out.println("Welcome to the flight booking experience.\nEnter your Username: ");
         usname = scan.next();
         scan.nextLine();
-        // if statement to see if user exists
+        if(users.getUser(usname) != null)
+        {
+            System.out.println("Correct username");
+        }
         System.out.println("Enter your password: ");
         password = scan.next();
         scan.nextLine();
-        // if statement to decide if password is correct
-        System.out.println("Succesful login.");
-        System.out.println("Type q at any time to quit program:");
+        if(users.getUser(usname).getPassword() == password)
+        {
+            System.out.println("Succesful login.");
+            System.out.println("Type q at any time to quit program:");
+        }
+
     }
 
     /**
@@ -52,6 +59,7 @@ public class FlightSystemUI {
      * @return returns an int matching the menu choice
      */
     public int displayOptions() {
+        int myChoice=1;
         boolean correct = false;
         while (!correct) {
             try {
@@ -60,15 +68,18 @@ public class FlightSystemUI {
                 int choice = scan.nextInt();
                 if (choice < 1 || choice > 5){
                     System.out.println("Sorry that is not an option");
-                } else {
+                } 
+                else{
                     correct = true;
+                    myChoice = choice;
                 }
-            } catch (InputMismatchException e) {
+            } 
+            catch (InputMismatchException e) {
                 System.err.println("Input numbers only please.");
                 scan.nextLine();
             }
         }
-        reutrn choice;
+        return myChoice;
     }
 
     public void bookFlight() {
