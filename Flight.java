@@ -12,7 +12,7 @@ public class Flight {
     private int arrivalTime;
     private int departureTime;
     private String airline;
-    private UUID connectingFlight;
+    private int connectingFlight;
 
     /**
      * Flight Constructor
@@ -27,7 +27,7 @@ public class Flight {
      */
     public Flight(Seat[] seats, int flightlength, boolean hasTV,
     String depart, String arrival, UUID id, int flightNumber, String airline,
-    int arrivalTime, int departureTime) {
+    int arrivalTime, int departureTime, int connectingFlight) {
         this.seats = seats;
         this.flightlength = flightlength;
         this.hasTV = hasTV;
