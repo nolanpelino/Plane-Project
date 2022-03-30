@@ -11,6 +11,7 @@ public class Flight {
     private String flightNumber;
     private int arrivalTime;
     private int departureTime;
+    private String airline;
 
     /**
      * Flight Constructor
@@ -35,6 +36,7 @@ public class Flight {
         this.flightNumber = flightNumber;
         this.arrivalTime = arrivalTime;
         this.departureTime = departureTime;
+        this.airline = airline;
     }
 
     /**
@@ -90,6 +92,13 @@ public class Flight {
      */
     public int getDepartureTIme() {
         return this.departureTime;
+    }
+
+    /**
+     * @return The flights airline
+     */
+    public String getAirline() {
+        return this.airline;
     }
 
     /**
