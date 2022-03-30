@@ -45,6 +45,9 @@ public class FlightSystemUI {
 
     }
 
+    /**
+     * Checks user's input to see if it matches a profile from the data
+     */
     public void loginCheck() {
         String usname;
         String password;
@@ -59,16 +62,25 @@ public class FlightSystemUI {
         System.out.println("Succesful login.");
     }
 
+    /**
+     * Displays menu options and reads user input
+     * @return returns an int matching the menu choice
+     */
     public int displayOptions() {
         boolean correct = false;
         while (!correct) {
-            System.out.println("Choose your menu option :");
-            System.out.println("1- Book flight\n2- Book hotel\n3- View my flights\n4- View my hotel bookings\n5- View my family");
-            int choice = scan.nextInt();
-            if (choice < 1 || choice > 5){
-                System.out.println("Sorry that is not an option");
-            } else {
-                correct = true;
+            try {
+                System.out.println("Choose your menu option :");
+                System.out.println("1- Book flight\n2- Book hotel\n3- View my flights\n4- View my hotel bookings\n5- View my family");
+                int choice = scan.nextInt();
+                if (choice < 1 || choice > 5){
+                    System.out.println("Sorry that is not an option");
+                } else {
+                    correct = true;
+                }
+            } catch (InputMismatchException e) {
+                System.err.println("Input numbers only please.");
+                scan.nextLine();
             }
         }
         reutrn choice;
@@ -93,4 +105,10 @@ public class FlightSystemUI {
     public void viewFamily() {
         
     }
+
+    public void quit(String keyword) {
+        if (keyword.equalsIgnoreCase("quit"))
+            System.exit(0);
+    }
+
 }
