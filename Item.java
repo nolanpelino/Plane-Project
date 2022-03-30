@@ -5,7 +5,6 @@ public abstract class Item {
     private double price;
 
     /**
-     * 
      * @return Price of an item as a double
      */
     public double getPrice(){

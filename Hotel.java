@@ -72,34 +72,36 @@ public class Hotel {
 
         for(int i = 0; i < rooms.length; i++) {
             completelyEmpty = true;
-            for(Date sd : stayDates) {
+            for(Date sd : stayDates) { // goes through every date to ensure the are all open
                 if (rooms[i].getAvailability(sd) == false) {
                     completelyEmpty = false;
-                    continue;
+                    continue;  // if one of the dates has a booked room, the for each loop ends
                 }
             }
             if (completelyEmpty) {
                 availRooms.add(rooms[i]);
+            } else {
+                System.out.println("Sorry, there are no rooms available for your chosen dates.");
             }
         } // outer-forloop bracket
-
+        
         System.out.println("These are the open rooms for your stay time: \n");
-        for(int i = 0; i < rooms.length; i++) {
+        for(Room rm : availRooms) {
             if (printCounter == 3) {
                 System.out.println("\n");
                 printCounter = 0;
             }
-            System.out.println(rooms[i].getRoomNumber() + "   ");
+            System.out.println(rm.getRoomNumber() + "\t");
             printCounter++;
         }
     }
 
     /**
-     * Books a AVAILABLE room of the users choice and on their stay dates.
+     * Books a *AVAILABLE* room of the users choice and on their stay dates.
      * @param roomNum
      * @param stayDates
      */
-    public void chooseRoom(int roomNum, ArrayList<Date> stayDates) {
+    public void chooseRoom(int roomNum, ArrayList<Date> stayDates) {  // Does not include a scanner. Input must occur in UI
         for (int i = 0; i < rooms.length; i++) {
             if(roomNum == rooms[i].getRoomNumber()) {
                 for(Date stdt : stayDates) {

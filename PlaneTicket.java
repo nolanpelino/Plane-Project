@@ -13,10 +13,12 @@ public class PlaneTicket {
 
     public void displayTicket() {
         System.out.println(passenger.getUsername());
+        
         if(passenger.getAge() < 12)
             System.out.println("Child Passenger");
         else
             System.out.println("Age " + passenger.getAge());
+
         System.out.println("Flight " + myFlight.getFlightNumber());
         System.out.println("From " + myFlight.getDeparture() + " to " + myFlight.getArrival());
         System.out.println("Gate " + gate + " Seat " + yourSeat.getExactPosition());

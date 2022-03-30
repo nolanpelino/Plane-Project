@@ -8,7 +8,7 @@ public class UserList {
         // TODO
     }
 
-    public UserList getInstance() {
+    public static UserList getInstance() {
         if(userlist == null) {
             userlist = new UserList();
             return userlist;
@@ -31,4 +31,12 @@ public class UserList {
         System.out.println("User not found");
         return null;
     }
+
+    /**
+     * 
+     * @return the list of users
+     */ 
+    public ArrayList<User> getUsers() {
+		return users;
+	}
 }
