@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 public class FlightSystemUI {
     Scanner scan = new Scanner(System.in);
@@ -53,11 +54,12 @@ public class FlightSystemUI {
      */
     public int displayOptions() {
         boolean correct = false;
+        int choice;
         while (!correct) {
             try {
                 System.out.println("Choose your menu option :");
                 System.out.println("1- Book flight\n2- Book hotel\n3- View my flights\n4- View my hotel bookings\n5- View my family");
-                int choice = scan.nextInt();
+                choice = scan.nextInt();
                 if (choice < 1 || choice > 5){
                     System.out.println("Sorry that is not an option");
                 } else {
@@ -68,7 +70,7 @@ public class FlightSystemUI {
                 scan.nextLine();
             }
         }
-        reutrn choice;
+        return 1;
     }
 
     public void bookFlight() {
@@ -116,4 +118,8 @@ public class FlightSystemUI {
             System.exit(0);
     }
 
+    public static void main(String[] args) {
+        FlightSystemUI flightSystemUI = new FlightSystemUI();
+        flightSystemUI.run();
+    }
 }
