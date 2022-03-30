@@ -5,7 +5,8 @@ public class FlightList {
     private ArrayList<Flight> flights;
 
     private FlightList() {
-        DataLoaded flightLoader = new DataLoader();
+        DataLoader flightLoader = new DataLoader();
+        flights = flightLoader.getFlights();
     }
 
     public static FlightList getInstance() {
@@ -32,6 +33,9 @@ public class FlightList {
         return null;
     }
 
+    /**
+     * @return The entire arraylist of Flights from dataLoader
+     */
     public ArrayList<Flight> getFlights() {
 		return flights;
 	}
