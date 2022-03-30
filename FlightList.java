@@ -5,7 +5,7 @@ public class FlightList {
     private ArrayList<Flight> flights;
 
     private FlightList() {
-        DataLoaded flightLoader = new DataLoader();
+        DataLoader flightLoader = new DataLoader();
     }
 
     public static FlightList getInstance() {
@@ -25,7 +25,7 @@ public class FlightList {
      */
     public Flight getFlight(int flightNum) {
         for (Flight fl : flights) {
-            if(fl.getFlightNumber == flightNum)
+            if(fl.getFlightNumber() == flightNum)
                 return fl;
         }
         System.out.println("Flight not found");
