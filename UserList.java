@@ -32,7 +32,17 @@ public class UserList {
         return null;
     }
 
+<<<<<<< HEAD
     public ArrayList<User> getUsers() {
         return users;
     }
+=======
+    /**
+     * 
+     * @return the list of users
+     */ 
+    public ArrayList<User> getUsers() {
+		return users;
+	}
+>>>>>>> 74d122974d77512b7b47d8685c5775b2c913f6aa
 }

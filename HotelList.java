@@ -8,7 +8,7 @@ public class HotelList {
         //TODO
     }
 
-    public HotelList getInstance() {
+    public static HotelList getInstance() {
         if(hotelList == null) {
             hotelList = new HotelList();
             return hotelList;
@@ -26,4 +26,8 @@ public class HotelList {
         System.out.println("Hotel not found");
         return null;
     }
+
+    public ArrayList<Hotel> getHotels() {
+		return hotels;
+	}
 }

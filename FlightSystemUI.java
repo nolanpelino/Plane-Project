@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 public class FlightSystemUI {
     Scanner scan = new Scanner(System.in);
@@ -31,10 +32,11 @@ public class FlightSystemUI {
 
     public ArrayList<Flight> sortFlightsDeparting(String departingAirport) {
         System.out.println("What would ");
+        
     }
 
     public ArrayList<Flight> sortFlightsArrival(String arrivalAirport) {
-
+        
     }
 
     public ArrayList<Flight> sortFlightsByTime() {

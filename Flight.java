@@ -20,7 +20,7 @@ public class Flight {
      * @param boolean
      * @param String
      * @param String
-     * @param UUID
+     * @param String
      * @param String
      * @param String
      */
@@ -53,6 +53,14 @@ public class Flight {
      */
     public String getDeparture() {
         return this.departureAirport;
+    }
+
+    /**
+     * Returns the UUID of the flight
+     * @return UUID
+     */
+    public UUID getID() {
+        return this.id;
     }
 
     /**
@@ -105,7 +113,7 @@ public class Flight {
      * Returns an array list of open seats
      * @return ArrayList<Seat>
      */
-    public ArrayList getOpenSeats() {
+    public ArrayList<Seat> getOpenSeats() {
         ArrayList<Seat> opens = new ArrayList<Seat>();
         for (int i = 0; i < seats.length; i++) {
             if (seats[i].getAvailability())

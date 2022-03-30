@@ -37,6 +37,13 @@ public class Room extends Item {
     }
 
     /**
+     * @return the price of a room
+     */
+    public double getPrice() {
+        return this.price;
+    }
+
+    /**
      * Books the room for the entered Date
      * @param day
      */
