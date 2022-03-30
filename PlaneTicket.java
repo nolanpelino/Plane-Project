@@ -13,8 +13,7 @@ public class PlaneTicket {
 
     public void displayTicket() {
         System.out.println(username);
-        
-        if(passenger.getAge() < 12)
+        if(age < 12)
             System.out.println("Child Passenger");
         else
             System.out.println("Age " + age);
