@@ -8,7 +8,7 @@ public class FlightList {
         //TODO
     }
 
-    public FlightList getInstance() {
+    public static FlightList getInstance() {
         if(flightList == null) {
             flightList = new FlightList();
             return flightList;
@@ -31,4 +31,8 @@ public class FlightList {
         System.out.println("Flight not found");
         return null;
     }
+
+    public ArrayList<Flight> getFlights() {
+		return flights;
+	}
 }
