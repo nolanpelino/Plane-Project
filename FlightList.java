@@ -8,7 +8,7 @@ public class FlightList {
         DataLoaded flightLoader = new DataLoader();
     }
 
-    public FlightList getInstance() {
+    public static FlightList getInstance() {
         if(flightList == null) {
             flightList = new FlightList();
             return flightList;

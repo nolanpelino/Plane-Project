@@ -8,7 +8,7 @@ public class HotelList {
         //TODO
     }
 
-    public HotelList getInstance() {
+    public static HotelList getInstance() {
         if(hotelList == null) {
             hotelList = new HotelList();
             return hotelList;
