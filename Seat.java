@@ -55,6 +55,13 @@ public class Seat extends Item {
     }
 
     /**
+     * @return the price of a seat
+     */
+    public double getPrice() {
+        return this.price;
+    }
+
+    /**
      * 
      * @return returns the avalaibility value of the seat as a boolean
      */
