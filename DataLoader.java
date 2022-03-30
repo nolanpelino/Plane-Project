@@ -8,20 +8,6 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 public class DataLoader extends DataConstants {
-    public static void main(String args[]) throws IOException, ParseException {
-        ArrayList<User> user = getUsers();
-        for (int a = 0; a < user.size(); a++) {
-            System.out.println(user.get(a).getUsername());
-        }
-        ArrayList<Hotel> hotel = getHotels();
-        for (int a = 0; a < hotel.size(); a++) {
-            System.out.println(hotel.get(a).getName());
-        }
-        ArrayList<Flight> flights = getFlights();
-        for (int a = 0; a < flights.size(); a++) {
-            System.out.println(flights.get(a).getDeparture());
-        }
-    }
     public static ArrayList<User> getUsers() throws IOException, ParseException {
         ArrayList<User> users = new ArrayList<User>();
         /*JSONParser parser = new JSONParser();
