@@ -6,7 +6,7 @@ public class Hotel {
     private String address;
     private String name;
     private int price;
-    private String id;
+    private UUID id;
     private Room[] rooms;
     private boolean pool;
     private int stars;
@@ -20,7 +20,7 @@ public class Hotel {
      * @param boolean
      * @param String
      */
-    public Hotel(Room[] rooms, String address, String name, int stars, boolean pool, String id) {
+    public Hotel(Room[] rooms, String address, String name, int stars, boolean pool, UUID id) {
         this.rooms = rooms;
         this.address = address;
         this.name = name;
@@ -79,10 +79,10 @@ public class Hotel {
     }
 
     /**
-     * Returns the hotel's ID
-     * @return String
+     * Returns the hotel's UUID
+     * @return UUID
      */
-    public String getID() {
+    public UUID getID() {
         return this.id;
     }
 
