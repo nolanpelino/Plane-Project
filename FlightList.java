@@ -23,10 +23,10 @@ public class FlightList {
      * @param keyWord
      * @return An instance of a flight that contains the same flight number that was passed in
      */
-    public Flight getFlight(String flightNum) {
+    public Flight getFlight(int flightNum) {
         for (Flight fl : flights) {
-            if(fl.getFlightNumber().equalsIgnoreCase(flightNum))
-            return fl;
+            if(fl.getFlightNumber == flightNum)
+                return fl;
         }
         System.out.println("Flight not found");
         return null;
