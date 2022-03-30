@@ -30,6 +30,15 @@ public class Hotel {
     }
 
     /**
+     * Returns the rooms inside the hotel.
+     * @return Room[]
+     */
+
+    public Room[] getRooms(){
+        return this.rooms;
+    }
+
+    /**
      * Returns the name of the hotel
      * @return String
      */
@@ -38,11 +47,19 @@ public class Hotel {
     }
 
     /**
-     * Returns the hotel's adress
+     * Returns the hotel's address
      * @return String
      */
     public String getAddress() {
         return this.address;
+    }
+
+    /**
+     * Returns the hotel's price
+     * @return int
+     */
+    public int getPrice(){
+        return this.price;
     }
 
     /**
@@ -59,6 +76,14 @@ public class Hotel {
      */
     public boolean hasPool() {
         return this.pool;
+    }
+
+    /**
+     * Returns the hotel's ID
+     * @return String
+     */
+    public String getID() {
+        return this.id;
     }
 
     /**
