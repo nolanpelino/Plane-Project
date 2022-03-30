@@ -1,4 +1,5 @@
 import java.io.FileNotFoundException;
+import java.util.UUID;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -87,7 +88,7 @@ public class DataLoader extends DataConstants {
 
             boolean pool = (boolean) hotel.get("hotelPool");
 
-            String id = (String) hotel.get("hotelID");
+            UUID id = (UUID) hotel.get("hotelID");
             Room[] fin = new Room[totRooms.size()];
             for (int h = 0; h < fin.length; h++) {
                 fin[h] = totRooms.get(h);
@@ -120,7 +121,7 @@ public class DataLoader extends DataConstants {
             boolean hasTV = (boolean) flight.get("flightTV");
             String depart = (String) flight.get("flightDeparture");
             String arrival = (String) flight.get("flightArrival");
-            String id = (String) flight.get("flightID");
+            UUID id = (UUID) flight.get("flightID");
             String flightNumber = (String) flight.get("flightNumber");
             String airline = (String) flight.get("flightAirline");
             Seat[] epi = new Seat[seats.size()];
