@@ -5,6 +5,24 @@ public class InternationalFlight extends Flight {
     private String destinationCountry;
     private boolean hasPassport;
 
+    /**
+     * 
+     * Creates an instance of a InternationalFlight that uses objects from Flight
+     * @param planeModel
+     * @param seats
+     * @param flightlength
+     * @param hasTV
+     * @param depart
+     * @param arrival
+     * @param id
+     * @param flightNumber
+     * @param airline
+     * @param arrivalTime
+     * @param departureTime
+     * @param originCountry
+     * @param destinationCountry
+     * @param hasPassport
+     */
     public InternationalFlight(String planeModel, Seat[] seats, int flightlength, boolean hasTV, String depart,
             String arrival, UUID id, String flightNumber, String airline,
             int arrivalTime, int departureTime, String originCountry, String destinationCountry,
@@ -14,15 +32,26 @@ public class InternationalFlight extends Flight {
         this.destinationCountry = destinationCountry;
         this.hasPassport = hasPassport;
     }
-    
+    /**
+     * 
+     * @return returns the origin country as a String
+     */
     public String getOriginCountry() {
         return this.originCountry;
     }
 
+    /**
+     * 
+     * @return returns the destination country as a String
+     */
     public String getDestinationCountry() {
         return this.destinationCountry;
     }
 
+    /**
+     * 
+     * @return returns true if the user has a passportl; false if not.
+     */
     public boolean getPassport(){
     	return this.hasPassport;
     }
