@@ -1,7 +1,6 @@
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
-import java.util.InputMismatchException;
 public class FlightSystemUI {
     Scanner scan = new Scanner(System.in);
     private HotelList hotels;
@@ -81,7 +80,7 @@ public class FlightSystemUI {
                 scan.nextLine();
             }
         }
-        return 1;
+        return myChoice;
     }
 
     public void bookFlight() {
