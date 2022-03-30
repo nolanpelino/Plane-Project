@@ -12,6 +12,7 @@ public class Flight {
     private int arrivalTime;
     private int departureTime;
     private String airline;
+    private UUID connectingFlight;
 
     /**
      * Flight Constructor
@@ -26,7 +27,7 @@ public class Flight {
      */
     public Flight(Seat[] seats, int flightlength, boolean hasTV,
     String depart, String arrival, UUID id, String flightNumber, String airline,
-    int arrivalTime, int departureTime) {
+    int arrivalTime, int departureTime, UUID connectingFlight) {
         this.seats = seats;
         this.flightlength = flightlength;
         this.hasTV = hasTV;
@@ -37,6 +38,15 @@ public class Flight {
         this.arrivalTime = arrivalTime;
         this.departureTime = departureTime;
         this.airline = airline;
+        this.connectingFlight = connectingFlight;
+    }
+
+    /**
+     * Returns the connecting flight UUID
+     * @return UUID
+     */
+    public UUID getConnectingFlight() {
+        return this.connectingFlight;
     }
 
     /**
