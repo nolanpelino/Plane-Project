@@ -7,7 +7,7 @@ public class Flight {
     private boolean hasTV;
     private String departureAirport;
     private String arrivalAirport;
-    private UUID id;
+    private String id;
     private String flightNumber;
     private int arrivalTime;
     private int departureTime;
@@ -20,12 +20,12 @@ public class Flight {
      * @param boolean
      * @param String
      * @param String
-     * @param UUID
+     * @param String
      * @param String
      * @param String
      */
     public Flight(Seat[] seats, int flightlength, boolean hasTV,
-    String depart, String arrival, UUID id, String flightNumber, String airline,
+    String depart, String arrival, String id, String flightNumber, String airline,
     int arrivalTime, int departureTime) {
         this.seats = seats;
         this.flightlength = flightlength;
