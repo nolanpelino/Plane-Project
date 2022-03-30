@@ -21,7 +21,7 @@ public class InternationalFlight extends Flight {
      * @param departureTime
      * @param originCountry
      * @param destinationCountry
-     * @param hasPassport
+     * @param hasPassport 
      */
     public InternationalFlight(String planeModel, Seat[] seats, int flightlength, boolean hasTV, String depart,
             String arrival, UUID id, String flightNumber, String airline,
