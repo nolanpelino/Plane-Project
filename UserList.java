@@ -35,7 +35,7 @@ public class UserList {
     /**
      * 
      * @return the list of users
-     */
+     */ 
     public ArrayList<User> getUsers() {
 		return users;
 	}
