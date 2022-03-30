@@ -8,7 +8,7 @@ public class FlightList {
         //TODO
     }
 
-    public static FlightList getInstance() {
+    public FlightList getInstance() {
         if(flightList == null) {
             flightList = new FlightList();
             return flightList;
