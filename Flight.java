@@ -8,7 +8,7 @@ public class Flight {
     private String departureAirport;
     private String arrivalAirport;
     private UUID id;
-    private String flightNumber;
+    private int flightNumber;
     private int arrivalTime;
     private int departureTime;
     private String airline;
@@ -25,7 +25,7 @@ public class Flight {
      * @param String
      */
     public Flight(Seat[] seats, int flightlength, boolean hasTV,
-    String depart, String arrival, UUID id, String flightNumber, String airline,
+    String depart, String arrival, UUID id, int flightNumber, String airline,
     int arrivalTime, int departureTime) {
         this.seats = seats;
         this.flightlength = flightlength;
@@ -83,7 +83,7 @@ public class Flight {
      * Returns the flights number
      * @return String
      */
-    public String getFlightNumber() {
+    public int getFlightNumber() {
         return this.flightNumber;
     }
 
