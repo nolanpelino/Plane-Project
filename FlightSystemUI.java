@@ -13,6 +13,18 @@ public class FlightSystemUI {
         int choice;
         loginCheck();
         choice = displayOptions();
+        switch(choice) {
+            case 1: bookFlight();
+                    break;
+            case 2: bookHotel();
+                    break;
+            case 3: viewFlights();
+                    break;
+            case 4: viewHotelBookings();
+                    break;
+            case 5: viewFamily();
+                    break;
+        }
     }
 
     
@@ -60,5 +72,25 @@ public class FlightSystemUI {
             }
         }
         reutrn choice;
+    }
+
+    public void bookFlight() {
+
+    }
+
+    public void bookHotel() {
+
+    }
+
+    public void viewFlights() {
+
+    }
+
+    public void viewHotelBookings() {
+
+    }
+
+    public void viewFamily() {
+        
     }
 }
