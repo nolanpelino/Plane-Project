@@ -128,7 +128,7 @@ public class DataLoader extends DataConstants {
             for (int g = 0; g < epi.length; g++) {
                 epi[g] = seats.get(g);
             }
-            Flight ex = new Flight(epi, flightLength, hasTV, depart, arrival, id, flightNumber, airline, 7, 9);
+            Flight ex = new Flight(epi, flightLength, hasTV, depart, arrival, id, flightNumber, airline);
             flights.add(ex);
         }
         return flights;
