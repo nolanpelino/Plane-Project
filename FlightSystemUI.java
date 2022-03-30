@@ -28,24 +28,6 @@ public class FlightSystemUI {
         }
     }
 
-    
-
-    public ArrayList<Flight> sortFlightsDeparting(String departingAirport) {
-        System.out.println("What would ");
-        
-    }
-
-    public ArrayList<Flight> sortFlightsArrival(String arrivalAirport) {
-        
-    }
-
-    public ArrayList<Flight> sortFlightsByTime() {
-        
-    }
-
-    public Hotel sortHotel(String address) {
-
-    }
 
     /**
      * Checks user's input to see if it matches a profile from the data
@@ -62,6 +44,7 @@ public class FlightSystemUI {
         scan.nextLine();
         // if statement to decide if password is correct
         System.out.println("Succesful login.");
+        System.out.println("Type q at any time to quit program:");
     }
 
     /**
@@ -89,6 +72,26 @@ public class FlightSystemUI {
     }
 
     public void bookFlight() {
+        String depPort, arrPort;
+        ArrayList<Flight> allFlights = flights.getFlights();
+        System.out.println("Flight booking protocol:\nEnter your departing airport: ");
+        depPort = scan.next();
+        quit(depPort);
+        scan.nextLine();
+
+        System.out.println("Enter your arrival airport: ");
+        arrPort = scan.next();
+        scan.nextLine();
+        System.out.println("Here are the available flights:");
+
+        for(Flight f : allFlights) {  // removes all flights that do not have the airports entered
+            if ((!f.getDeparture().equalsIgnoreCase(depPort)) || (!f.getArrival().equalsIgnoreCase(arrPort)))
+                allFlights.remove(f);
+        }
+        for (Flight f : allFlights) {
+            f.printAllInfo();
+        }
+
 
     }
 
