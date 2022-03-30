@@ -37,10 +37,10 @@ public class Flight {
     }
 
     /**
-     * Returns the connecting flight UUID
-     * @return UUID
+     * Returns the connecting flight int
+     * @return int
      */
-    public UUID getConnectingFlight() {
+    public int getConnectingFlight() {
         return this.connectingFlight;
     }
 

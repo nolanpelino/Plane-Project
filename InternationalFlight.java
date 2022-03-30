@@ -24,10 +24,10 @@ public class InternationalFlight extends Flight {
      * @param hasPassport 
      */
     public InternationalFlight(String planeModel, Seat[] seats, int flightlength, boolean hasTV, String depart,
-            String arrival, UUID id, String flightNumber, String airline,
+            String arrival, UUID id, int flightNumber, String airline, int connectingFlight,
             int arrivalTime, int departureTime, String originCountry, String destinationCountry,
             boolean hasPassport) {
-        super(seats, flightlength, hasTV, depart, arrival, id, destinationCountry, airline, arrivalTime, departureTime);
+        super(seats, flightlength, hasTV, depart, arrival, id, flightNumber, airline, connectingFlight);
         this.originCountry = originCountry;
         this.destinationCountry = destinationCountry;
         this.hasPassport = hasPassport;
