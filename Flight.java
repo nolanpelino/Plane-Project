@@ -9,8 +9,6 @@ public class Flight {
     private String arrivalAirport;
     private UUID id;
     private int flightNumber;
-    private int arrivalTime;
-    private int departureTime;
     private String airline;
     private int connectingFlight;
 
@@ -26,8 +24,7 @@ public class Flight {
      * @param String
      */
     public Flight(Seat[] seats, int flightlength, boolean hasTV,
-    String depart, String arrival, UUID id, int flightNumber, String airline,
-    int arrivalTime, int departureTime, int connectingFlight) {
+    String depart, String arrival, UUID id, int flightNumber, String airline, int connectingFlight) {
         this.seats = seats;
         this.flightlength = flightlength;
         this.hasTV = hasTV;
@@ -35,8 +32,6 @@ public class Flight {
         this.arrivalAirport = arrival;
         this.id = id;
         this.flightNumber = flightNumber;
-        this.arrivalTime = arrivalTime;
-        this.departureTime = departureTime;
         this.airline = airline;
         this.connectingFlight = connectingFlight;
     }
@@ -95,21 +90,6 @@ public class Flight {
      */
     public int getFlightNumber() {
         return this.flightNumber;
-    }
-
-    /**
-     * 
-     * @return The arrival time as an integer. Kept in military time
-     */
-    public int getArrivalTime() {
-        return this.arrivalTime;
-    }
-
-    /**
-     * @return The departure time as an integer. Kept in military time
-     */
-    public int getDepartureTIme() {
-        return this.departureTime;
     }
 
     /**
