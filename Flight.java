@@ -149,4 +149,24 @@ public class Flight {
         }
         System.out.println("Seat not found");
     }
+
+    /**
+     * Prints out a flights info that is readable for a User
+     */
+    public void printAllInfo() {
+        int timeHours = getLength() / 60;
+        int timeMins = getLength() % 60;
+        System.out.println(getAirline() + " Flight " + getFlightNumber() + " from " + getDeparture() +
+         " to " + getArrival());
+
+        System.out.print("Travel time : " + timeHours + " hours");
+        if(timeMins != 0) 
+            System.out.println(" and " + timeMins + " minutes");
+            
+        System.out.print("This flight has " + getOpenSeats().size() + " open seats");
+        if(hasTVs())
+            System.out.println(" each with a TV.");
+        else
+            System.out.println(" without TV's.");
+    }
 }
