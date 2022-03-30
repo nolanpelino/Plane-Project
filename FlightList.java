@@ -26,7 +26,7 @@ public class FlightList {
      */
     public Flight getFlight(int flightNum) {
         for (Flight fl : flights) {
-            if(fl.getFlightNumber == flightNum)
+            if(fl.getFlightNumber() == flightNum)
                 return fl;
         }
         System.out.println("Flight not found");
