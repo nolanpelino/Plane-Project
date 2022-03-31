@@ -1,8 +1,10 @@
+import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
+import org.json.simple.parser.ParseException;
 
 public class DataWriter extends DataConstants {
     
@@ -39,7 +41,7 @@ public class DataWriter extends DataConstants {
         return userInfo;
     }
 
-    public static void saveFlights() {
+    public static void saveFlights() throws FileNotFoundException, IOException, ParseException {
         FlightList flights = FlightList.getInstance();
         ArrayList<Flight> fList = flights.getFlights();
         JSONArray jsonFlights = new JSONArray();
