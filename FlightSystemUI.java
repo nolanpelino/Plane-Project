@@ -6,6 +6,7 @@ public class FlightSystemUI {
     private HotelList hotels;
     private UserList users;
     private FlightList flights;
+    private User currentUser;
 
     public FlightSystemUI(){
 
@@ -36,45 +37,22 @@ public class FlightSystemUI {
     public void loginCheck() {
         String usname;
         String password;
-        boolean exists = false;
-        int scanAllow = 0;
-
-        // Username section
         System.out.println("Welcome to the flight booking experience.\nEnter your Username: ");
         usname = scan.next();
         scan.nextLine();
-        while(!exists) {
-            if (scanAllow > 0) {  //allows the usname to be inttialized regardless of exist value
-                usname = scan.next();
-                scan.nextLine();
-            }
-            for (User us : users.getUsers()) {
-                if (us.getUsername().equals(usname)) {
-                    exists = true;
-                    continue;
-                }
-            }
-            if (!exists)
-                System.out.println("User not found. Try again");
-            scanAllow++;
+        if(users.getUser(usname) != null)
+        {
+            System.out.println("Correct username");
         }
-        exists = false;
-
-        // Password Section
         System.out.println("Enter your password: ");
-        while(!exists) {
-            password = scan.next();
-            scan.nextLine();
-            for (User us : users.getUsers()) {
-                if (us.getUsername().equals(usname) && us.getPassword().equals(password)) {
-                    exists = true;
-                    System.out.println("Logging in...");
-                    continue;
-                }
-            }
-            if (!exists)
-                System.out.println("Incorrect password, try again");
-        }   
+        password = scan.next();
+        scan.nextLine();
+        if(users.getUser(usname).getPassword() == password)
+        {
+            System.out.println("Succesful login.");
+            System.out.println("Type q at any time to quit program:");
+        }
+
     }
 
     /**
@@ -126,8 +104,6 @@ public class FlightSystemUI {
         for (Flight f : allFlights) {
             f.printAllInfo();
         }
-
-
     }
 
     public void bookHotel() {
@@ -151,15 +127,18 @@ public class FlightSystemUI {
     }
 
     public void viewFlights() {
-        
+
     }
 
     public void viewHotelBookings() {
-
+        System.out.println("Here are all of your hotel bookings:");
+        currentUser.printHotelBookings();
+        
     }
 
     public void viewFamily() {
-        
+        System.out.println("Here are your linked family members:");
+        currentUser.printLinkedAccounts();
     }
 
     public void quit(String keyword) {
