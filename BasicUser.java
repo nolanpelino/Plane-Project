@@ -41,5 +41,7 @@ public class BasicUser {
     public boolean isDisabled(){
         return hasDisability;
     }
-
+    public void displayAccount() {
+        System.out.println(username);
+    }
 }
