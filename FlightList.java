@@ -1,15 +1,19 @@
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
+
+import org.json.simple.parser.ParseException;
 
 public class FlightList {
     private static FlightList flightList;
     private ArrayList<Flight> flights;
 
-    private FlightList() {
+    private FlightList() throws FileNotFoundException, IOException, ParseException {
         DataLoader flightLoader = new DataLoader();
-        flights = flightLoader.getFlights();
+        flights = DataLoader.getFlights();
     }
 
-    public static FlightList getInstance() {
+    public static FlightList getInstance() throws FileNotFoundException, IOException, ParseException {
         if(flightList == null) {
             flightList = new FlightList();
             return flightList;
