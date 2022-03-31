@@ -16,7 +16,7 @@ public class User extends BasicUser{
     private ArrayList<HotelBooking> hotelBookings;
 
     /**
-     * Class used for interactions that call for a more complex user. Extends BasicUser
+     * Constructor for loading from files
      * @param username
      * @param password
      * @param age
@@ -32,6 +32,18 @@ public class User extends BasicUser{
         this.address=address;
         this.passport=passport;
     }
+    
+    /**
+     * Constructor for making user in the UI
+     * @param username
+     * @param password
+     * @param age
+     * @param address
+     * @param frequentFlyer
+     * @param homeAirport
+     * @param passport
+     * @param hasDisability
+     */
     public User(String username, String password, int age, String address, boolean frequentFlyer, String homeAirport, boolean passport, boolean hasDisability) {
         super(username,age,passport,hasDisability);
         this.uuid=UUID.randomUUID();
