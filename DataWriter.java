@@ -25,6 +25,7 @@ public class DataWriter extends DataConstants {
             e.printStackTrace();
         }
     }
+    
     public static JSONObject getUserJSON(User usr) {
         JSONObject userInfo = new JSONObject();
         userInfo.put(USER_USERNAME, usr.getUsername());
@@ -57,6 +58,7 @@ public class DataWriter extends DataConstants {
             e.printStackTrace();
         }
     }
+
     public static JSONObject getFlightJSON(Flight flg) {
         JSONObject flightInfo = new JSONObject();
         flightInfo.put(FLIGHT_SEATS, flg.getOpenSeats());
@@ -88,6 +90,7 @@ public class DataWriter extends DataConstants {
             e.printStackTrace();
         }
     }
+
     public static JSONObject getHotelJSON(Hotel htl) {
         JSONObject hotelInfo = new JSONObject();
         hotelInfo.put(HOTEL_ADDRESS, htl.getAddress());
