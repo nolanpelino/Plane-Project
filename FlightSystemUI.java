@@ -36,6 +36,8 @@ public class FlightSystemUI {
      * Checks user's input to see if it matches a profile from the data
      */
     public void loginCheck() {
+        users = UserList.getInstance();
+        ArrayList<User> userList = users.getUsers();
         String usname;
         String password;
         System.out.println("Welcome to the flight booking experience.\nEnter your Username: ");

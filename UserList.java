@@ -8,7 +8,7 @@ public class UserList {
         // TODO
     }
 
-    public UserList getInstance() {
+    public static UserList getInstance() {
         if(userlist == null) {
             userlist = new UserList();
             return userlist;
