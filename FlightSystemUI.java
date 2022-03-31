@@ -60,8 +60,15 @@ public class FlightSystemUI {
                     continue;
                 }
             }
-            if (!exists)
-                System.out.println("User not found. Try again");
+            if (!exists) {
+                System.out.println("User not found");
+                System.out.println("Would you like to create an account or retry(N)? (Y/N)");
+                if (scan.next().equalsIgnoreCase("y")) {
+                    exists = true;
+                    createAccount();
+                }
+
+            }
             scanAllow++;
         }
         exists = false;
