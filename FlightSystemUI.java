@@ -1,6 +1,9 @@
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
+
+import org.json.simple.parser.ParseException;
 public class FlightSystemUI {
     Scanner scan;
     private HotelList hotels;
@@ -10,12 +13,6 @@ public class FlightSystemUI {
 
     public FlightSystemUI(){
         scan = new Scanner(System.in);
-
-    }
-
-    public void run(){
-        int choice;
-        loginCheck();
         choice = displayOptions();
         switch(choice) {
             case 1: bookFlight();
@@ -34,8 +31,10 @@ public class FlightSystemUI {
 
     /**
      * Checks user's input to see if it matches a profile from the data
+     * @throws ParseException
+     * @throws IOException
      */
-    public void loginCheck() {
+    public void loginCheck() throws IOException, ParseException {
         String usname;
         String password;
         boolean exists = false;
@@ -50,6 +49,7 @@ public class FlightSystemUI {
                 usname = scan.next();
                 scan.nextLine();
             }
+            users = UserList.getInstance();
             for (User us : users.getUsers()) {
                 if (us.getUsername().equals(usname)) {
                     exists = true;
@@ -197,7 +197,7 @@ public class FlightSystemUI {
             System.exit(0);
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException, ParseException {
         FlightSystemUI flightSystemUI = new FlightSystemUI();
         flightSystemUI.run();
     }
