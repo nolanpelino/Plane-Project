@@ -13,6 +13,10 @@ public class FlightSystemUI {
 
     public FlightSystemUI(){
         scan = new Scanner(System.in);
+    }
+    public void run() throws IOException, ParseException{
+        int choice;
+        loginCheck();
         choice = displayOptions();
         switch(choice) {
             case 1: bookFlight();
