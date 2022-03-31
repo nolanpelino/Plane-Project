@@ -25,7 +25,7 @@ public class UserList {
      */
     public User getUser(String userName) {
         for (User us : users) {
-            if(us.getUsername().equalsIgnoreCase(userName))
+            if(us.getUsername().equals(userName))
                 return us;
         }
         System.out.println("User not found");
