@@ -36,27 +36,47 @@ public class FlightSystemUI {
      * Checks user's input to see if it matches a profile from the data
      */
     public void loginCheck() {
-        users = UserList.getInstance();
-        ArrayList<User> userList = users.getUsers();
         String usname;
         String password;
+        boolean exists = false;
+        int scanAllow = 0;
+
+        // Username section
         System.out.println("Welcome to the flight booking experience.\nEnter your Username: ");
         usname = scan.next();
         scan.nextLine();
-        userList.
-        if(users.getUser(usname) != null)
-        {
-            System.out.println("Correct username");
+        while(!exists) {
+            if (scanAllow > 0) {  //allows the usname to be inttialized regardless of exist value
+                usname = scan.next();
+                scan.nextLine();
+            }
+            for (User us : users.getUsers()) {
+                if (us.getUsername().equals(usname)) {
+                    exists = true;
+                    continue;
+                }
+            }
+            if (!exists)
+                System.out.println("User not found. Try again");
+            scanAllow++;
         }
-        System.out.println("Enter your password: ");
-        password = scan.next();
-        scan.nextLine();
-        if(users.getUser(usname).getPassword() == password)
-        {
-            System.out.println("Succesful login.");
-            System.out.println("Type q at any time to quit program:");
-        }
+        exists = false;
 
+        // Password Section
+        System.out.println("Enter your password: ");
+        while(!exists) {
+            password = scan.next();
+            scan.nextLine();
+            for (User us : users.getUsers()) {
+                if (us.getUsername().equals(usname) && us.getPassword().equals(password)) {
+                    exists = true;
+                    System.out.println("Logging in...");
+                    continue;
+                }
+            }
+            if (!exists)
+                System.out.println("Incorrect password, try again");
+        }   
     }
 
     /**
