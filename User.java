@@ -23,7 +23,7 @@ public class User extends BasicUser{
      * @param homeAirport
      * @param passport
      */
-    public User(String username, String password, int age, String address, boolean hasDisability,String homeAirport, boolean passport) {
+    public User(String username, String password, int age, String address, boolean frequentFlyer, String homeAirport, boolean passport, boolean hasDisability) {
         super(username,age,passport,hasDisability);
         this.homeAirport = homeAirport;
         this.address=address;

@@ -57,7 +57,7 @@ public class DataLoader extends DataConstants {
                 JSONObject hotel = (JSONObject) c;
                 //System.out.println((int) (double) hotel.get("confirmationNumber"));
 		    }
-            User ex = new User(username, password, age, address, hasDisabilities, homeAirport, passport);
+            User ex = new User(username, password, age, address, frequentFlyer, homeAirport, passport, hasDisabilities);
             users.add(ex);
         }
         return users;
