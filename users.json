@@ -5,7 +5,7 @@
         "uuid": "7244f7ac-a242-417d-9aa5-6ad7fb5fde5b",
         "age": 36,
         "address": "638 W University Boulevard\nOdessa, Texas 79964\nUnited States",
-        "frequentFlyer": true,
+        "frqflyer": true,
         "homeAirport": "ODO",
         "passport": true,
         "hasDisability": false
