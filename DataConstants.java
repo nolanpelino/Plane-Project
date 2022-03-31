@@ -7,6 +7,7 @@ public abstract class DataConstants {
     //User data constants
     protected static final String USER_USERNAME = "username";
     protected static final String USER_PASSWORD = "password";
+    protected static final String USER_UUID = "uuid";
     protected static final String USER_AGE = "age";
     protected static final String USER_ADDRESS = "userAddress";
     protected static final String USER_FAMILYUSERS = "familyUsers";

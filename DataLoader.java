@@ -18,29 +18,35 @@ public class DataLoader extends DataConstants {
         
         for (int i=0; i< a.size(); i++) {
 		    JSONObject user = (JSONObject)a.get(i);
-		    String username = (String) user.get("username");
-		    String password = (String) user.get("password");
-		    int age = (int) (double) user.get("age");
-		    String address = (String) user.get("address");
-		    boolean frequentFlyer = (boolean) user.get("frequentFlyer");
-		    String homeAirport = (String) user.get("homeAirport");
-		    boolean passport = (boolean) user.get("passport");
-		    boolean hasDisabilities = (boolean) user.get("hasDisability");	
-		    JSONArray tickets = (JSONArray) user.get("tickets");
-		    for (Object c: tickets) {
-                JSONObject flight = (JSONObject) c;
-                //System.out.println((String) flight.get("myFlight"));
-            }
-		    JSONArray hotelBookings = (JSONArray) user.get("hotelBookings");
-		    for (Object c: hotelBookings) {
-                JSONObject hotel = (JSONObject) c;
-                //System.out.println((int) (double) hotel.get("confirmationNumber"));
-		    }
-            User ex = new User(username, password, age, address, frequentFlyer, homeAirport, passport, hasDisabilities);
+		    String username = (String) user.get(USER_USERNAME);
+		    String password = (String) user.get(USER_PASSWORD);
+            UUID uuid = UUID.fromString((String)user.get(USER_UUID));
+		    int age = ((Long)user.get(USER_AGE)).intValue();
+		    String address = (String) user.get(USER_ADDRESS);
+		    boolean frequentFlyer = (boolean) user.get(USER_FRQFLYER);
+		    String homeAirport = (String) user.get(USER_HOMEAIRPORT);
+		    boolean passport = (boolean) user.get(USER_PASSPORT);
+		    boolean hasDisabilities = (boolean) user.get(USER_HASDISABILITY);	
+		    //JSONArray tickets = (JSONArray) user.get("tickets");
+		    
+            // for (Object c: tickets) {
+            //     JSONObject flight = (JSONObject) c;
+            //     //System.out.println((String) flight.get("myFlight"));
+            // }
+		    // JSONArray hotelBookings = (JSONArray) user.get("hotelBookings");
+		    // for (Object c: hotelBookings) {
+            //     JSONObject hotel = (JSONObject) c;
+            //     //System.out.println((int) (double) hotel.get("confirmationNumber"));
+		    // }
+            User ex = new User(username, password,uuid, age, address, frequentFlyer, homeAirport, passport, hasDisabilities);
             users.add(ex);
+            }
+            return users;
+        }catch(Exception e){
+            e.printStackTrace();
         }
-        return users;
-    }
+        return null;
+        }
 
     public static ArrayList<Hotel> getHotels() throws FileNotFoundException, IOException, ParseException {
         ArrayList<Hotel> hotels = new ArrayList<Hotel>();

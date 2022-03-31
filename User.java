@@ -1,8 +1,10 @@
 import java.util.ArrayList;
+import java.util.UUID;
 
 public class User extends BasicUser{
     private String username;
     private String password;
+    private UUID uuid;
     private int age;
     private String address;
     private ArrayList<BasicUser> familyUsers;
@@ -23,8 +25,16 @@ public class User extends BasicUser{
      * @param homeAirport
      * @param passport
      */
+    public User(String username, String password,UUID uuid, int age, String address, boolean frequentFlyer, String homeAirport, boolean passport, boolean hasDisability) {
+        super(username,age,passport,hasDisability);
+        this.uuid=uuid;
+        this.homeAirport = homeAirport;
+        this.address=address;
+        this.passport=passport;
+    }
     public User(String username, String password, int age, String address, boolean frequentFlyer, String homeAirport, boolean passport, boolean hasDisability) {
         super(username,age,passport,hasDisability);
+        this.uuid=UUID.randomUUID();
         this.homeAirport = homeAirport;
         this.address=address;
         this.passport=passport;
