@@ -119,4 +119,10 @@ public class User extends BasicUser{
             htl.displayHBooking();
         }
     }
+    public void printLinkedAccounts() {
+        for (BasicUser bsc : familyUsers) {
+            bsc.displayAccount();
+        }
+
+    }
 }
