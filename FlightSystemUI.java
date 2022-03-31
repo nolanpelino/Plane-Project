@@ -107,6 +107,30 @@ public class FlightSystemUI {
         }
         return myChoice;
     }
+    private void createAccount(){
+        System.out.println("Username:");
+        String userName=scan.next();
+        System.out.println("Password:");
+        String password=scan.next();
+        System.out.println("Age:");
+        int age=scan.nextInt();
+        System.out.println("Address:");
+        String address=scan.next();
+        System.out.println("Frequent flyer? (true/false):");
+        boolean frequentFlyer=scan.nextBoolean();
+        System.out.println("Home Airport code:");
+        String homeAirport=scan.next();
+        System.out.println("Passport? (true/false):");
+        boolean passport=scan.nextBoolean();
+        System.out.println("Disability? (true/false):");
+        boolean hasDisability=scan.nextBoolean();
+
+        if(users.addUser(userName, password, age, address, frequentFlyer, homeAirport, passport, hasDisability)){
+            System.out.println("You have created an account!");
+        } else{
+            System.out.println("Oh no an account with that name exists");
+        }
+    }
 
     public void bookFlight() {
         String depPort, arrPort;
