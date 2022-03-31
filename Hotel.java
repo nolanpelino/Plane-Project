@@ -4,6 +4,8 @@ import java.util.UUID;
 
 public class Hotel {
     private String address;
+    private String city;
+    private String state;
     private String name;
     private int price;
     private UUID id;
@@ -54,6 +56,14 @@ public class Hotel {
         return this.address;
     }
 
+    public String getState() {
+        return this.state;
+    }
+
+    public String getCity() {
+        return this.city;
+    }
+
     /**
      * Returns the hotel's price
      * @return int
@@ -86,6 +96,9 @@ public class Hotel {
         return this.id;
     }
 
+    public void printBasicInfo() {
+        System.out.println("Hotel name: "+getName()+"\nAddress: "+getAddress()+"\nReviews: "+getRating());
+    }
     /**
      * Prints out all of the open rooms of a hotel object
      * @param Date
