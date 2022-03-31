@@ -108,11 +108,27 @@ public class FlightSystemUI {
     }
 
     public void bookHotel() {
+        String state, city;
+        ArrayList<Hotel> allHotels = hotels.getHotels();
+        System.out.println("Hotel booking protocol:\nEnter State (Abrreviated)");
+        state = scan.next();
+        System.out.println("Enter city");
+        city = scan.next();
+        System.out.println("Here are the available hotels");
 
+        for (Hotel h : allHotels) {
+            if ((!h.getState().equalsIgnoreCase(state)) || (!h.getCity().equalsIgnoreCase(city))) {
+                allHotels.remove(h);
+            }
+        }
+
+        for (Hotel h : allHotels) {
+            h.printBasicInfo();
+        }
     }
 
     public void viewFlights() {
-
+        
     }
 
     public void viewHotelBookings() {
