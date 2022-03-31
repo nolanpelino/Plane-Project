@@ -11,42 +11,21 @@ import org.json.simple.parser.ParseException;
 public class DataLoader extends DataConstants {
     public static ArrayList<User> getUsers() throws IOException, ParseException {
         ArrayList<User> users = new ArrayList<User>();
-        /*JSONParser parser = new JSONParser();
-        try (FileReader reader = new FileReader(USERS_FILENAME)){ 
-            Object obj = JSONParser.parse(reader);
-            JSONArray userJSON = (JSONArray) obj;
-            
-        }*/
-        JSONParser parser = new JSONParser();
-        JSONArray a = (JSONArray) parser.parse(new FileReader(USERS_FILENAME));
-        for (Object o: a) {
-		    JSONObject user = (JSONObject) o;
+        try{
+            FileReader reader = new FileReader(USERS_FILENAME);
+            JSONParser parser = new JSONParser();
+            JSONArray a = (JSONArray)new JSONParser().parse(reader);
+        
+        for (int i=0; i< a.size(); i++) {
+		    JSONObject user = (JSONObject)a.get(i);
 		    String username = (String) user.get("username");
-		    //System.out.println(username);
-		
 		    String password = (String) user.get("password");
-		    //System.out.println(password);
-
 		    int age = (int) (double) user.get("age");
-		    //System.out.println(age);
-
 		    String address = (String) user.get("address");
-		    //System.out.println(address);
-
-		    //JSONArray family = (JSONArray) user.get("familyUsers");
-		    //if (family != null){
-                //for (Object c: family) 
-		            //System.out.println(c+" ");
-            //}
 		    boolean frequentFlyer = (boolean) user.get("frequentFlyer");
-
 		    String homeAirport = (String) user.get("homeAirport");
-		    //System.out.println(homeAirport);
-
 		    boolean passport = (boolean) user.get("passport");
-
-		    boolean hasDisabilities = (boolean) user.get("hasDisability");
-		
+		    boolean hasDisabilities = (boolean) user.get("hasDisability");	
 		    JSONArray tickets = (JSONArray) user.get("tickets");
 		    for (Object c: tickets) {
                 JSONObject flight = (JSONObject) c;

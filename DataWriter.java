@@ -29,14 +29,12 @@ public class DataWriter extends DataConstants {
         JSONObject userInfo = new JSONObject();
         userInfo.put(USER_USERNAME, usr.getUsername());
         userInfo.put(USER_PASSWORD, usr.getPassword());
-        userInfo.put(USER_ADDRESS, usr.getAddress());
         userInfo.put(USER_AGE, usr.getAge());
         userInfo.put(USER_ADDRESS, usr.getAddress());
         userInfo.put(USER_FRQFLYER, usr.getFrFlyer());
         userInfo.put(USER_HOMEAIRPORT, usr.getHomeAirport());
         userInfo.put(USER_PASSPORT, usr.hasPassport());
         userInfo.put(USER_HASDISABILITY, usr.getHasDisability());
-        userInfo.put(USER_FAMILYUSERS, usr.getFamilyUsers());
 
         return userInfo;
     }
