@@ -8,7 +8,7 @@ import org.json.simple.parser.ParseException;
 
 public class DataWriter extends DataConstants {
     
-    public static void saveUsers() {
+    public static void saveUsers() throws IOException, ParseException {
         UserList users = UserList.getInstance();
         ArrayList<User> uList = users.getUsers();
         JSONArray jsonUsers = new JSONArray();
@@ -29,6 +29,7 @@ public class DataWriter extends DataConstants {
         JSONObject userInfo = new JSONObject();
         userInfo.put(USER_USERNAME, usr.getUsername());
         userInfo.put(USER_PASSWORD, usr.getPassword());
+        userInfo.put(USER_UUID, usr.getUUID());
         userInfo.put(USER_AGE, usr.getAge());
         userInfo.put(USER_ADDRESS, usr.getAddress());
         userInfo.put(USER_FRQFLYER, usr.getFrFlyer());

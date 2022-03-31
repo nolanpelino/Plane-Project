@@ -1,14 +1,17 @@
+import java.io.IOException;
 import java.util.ArrayList;
+
+import org.json.simple.parser.ParseException;
 
 public class UserList {
     private static UserList users;
     private ArrayList<User> userL;
     
-    private UserList() {
+    private UserList() throws IOException, ParseException {
         userL = DataLoader.getUsers();
     }
 
-    public static UserList getInstance() {
+    public static UserList getInstance() throws IOException, ParseException {
         if(users == null) {
             users = new UserList();
         }
@@ -30,7 +33,7 @@ public class UserList {
      * @return An instance of a user that matches the passed in Username
      */
     public User getUser(String userName) {
-        for (User user : userList) {
+        for (User user : userL) {
             if(user.getUsername().equals(userName))
                 return user;
         }
@@ -48,11 +51,11 @@ public class UserList {
 
     public boolean addUser(String username, String password, int age, String address, boolean frequentFlyer, String homeAirport, boolean passport, boolean hasDisability) {
     if(haveUser(username)) return false;
-    userL.add(new User(username, password, age, address, frequentFlyer, homeAirport, passport, hasDisability))
+    userL.add(new User(username, password, age, address, frequentFlyer, homeAirport, passport, hasDisability));
     return true;
     }
 
-    public void saveUsers(){
+    public void saveUsers() throws IOException, ParseException{
         DataWriter.saveUsers();
     }
 }

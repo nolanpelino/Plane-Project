@@ -96,6 +96,10 @@ public class User extends BasicUser{
         return this.frequentFlyer;
     }
 
+    public UUID getUUID(){
+        return this.uuid;
+    }
+
     /**
      * Sets the user's frequent flyer status to true if they have more than 3 lifetime flights
      */
