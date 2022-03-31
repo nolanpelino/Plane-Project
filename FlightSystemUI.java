@@ -2,13 +2,14 @@ import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 public class FlightSystemUI {
-    Scanner scan = new Scanner(System.in);
+    Scanner scan;
     private HotelList hotels;
     private UserList users;
     private FlightList flights;
     private User currentUser;
 
     public FlightSystemUI(){
+        scan = new Scanner(System.in);
 
     }
 
@@ -127,7 +128,10 @@ public class FlightSystemUI {
     }
 
     public void viewFlights() {
-
+        System.out.println("Here are all of your previous flights");
+        for (PlaneTicket t : currentUser.getTickets()) {
+            t.displayTicket();
+        }
     }
 
     public void viewHotelBookings() {
