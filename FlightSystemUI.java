@@ -55,7 +55,7 @@ public class FlightSystemUI {
             }
             users = UserList.getInstance();
             for (User us : users.getUsers()) {
-                if (us.getUsername().equals(usname)) {
+                if (us.getUsername()==null || us.getUsername().equals(usname)) {
                     exists = true;
                     continue;
                 }
