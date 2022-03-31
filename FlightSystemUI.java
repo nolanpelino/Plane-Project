@@ -43,7 +43,7 @@ public class FlightSystemUI {
         System.out.println("Welcome to the flight booking experience.\nEnter your Username: ");
         usname = scan.next();
         scan.nextLine();
-        
+        userList.
         if(users.getUser(usname) != null)
         {
             System.out.println("Correct username");
