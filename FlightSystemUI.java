@@ -42,7 +42,7 @@ public class FlightSystemUI {
         usname = scan.next();
         scan.nextLine();
         
-        if(UserList.getInstance().getUser(usname) != null)
+        if(users.getUser(usname) != null)
         {
             System.out.println("Correct username");
         }
