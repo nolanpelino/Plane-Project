@@ -53,13 +53,16 @@ public class User extends BasicUser{
     }
 
     /**
-     * Returns the user's username as a string
-     * @return String
+     * @return The user's username as a string
      */
     public String getUsername() {
         return this.username;
     }
 
+    /**
+     * 
+     * @return The user's password
+     */
     public String getPassword() {
         return this.password;
     }
