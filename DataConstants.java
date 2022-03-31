@@ -19,6 +19,7 @@ public abstract class DataConstants {
 
     //Hotel data constants
     protected static final String HOTEL_ADDRESS = "hotelAddress";
+    protected static final String HOTEL_CITY = "hotelCity";
     protected static final String HOTEL_NAME = "hotelName";
     protected static final String HOTEL_STARS = "hotelStars";
     protected static final String HOTEL_PRICE = "price";
