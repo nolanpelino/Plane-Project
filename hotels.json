@@ -1,6 +1,9 @@
 [
     {
         "hotelAddress":"8332 Willow Branch Dr",
+        "hotelState":"SC",
+        "hotelCity":"Columbia",
+        "price":199,
         "hotelName":"The Omni",
         "hotelStars":"****",
         "hotelPool":true,
