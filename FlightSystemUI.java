@@ -125,17 +125,20 @@ public class FlightSystemUI {
         String password=scan.next();
         System.out.println("Age:");
         int age=scan.nextInt();
-        System.out.println("Address:");
-        String address=scan.next();
         scan.nextLine();
+        System.out.println("Address:");
+        String address=scan.nextLine();
         System.out.println("Frequent flyer? (true/false):");
         boolean frequentFlyer=scan.nextBoolean();
+        scan.nextLine();
         System.out.println("Home Airport code:");
         String homeAirport=scan.next();
         System.out.println("Passport? (true/false):");
         boolean passport=scan.nextBoolean();
+        scan.next();
         System.out.println("Disability? (true/false):");
         boolean hasDisability=scan.nextBoolean();
+        scan.nextLine();
 
         if(users.addUser(userName, password, age, address, frequentFlyer, homeAirport, passport, hasDisability)){
             System.out.println("You have created an account!");
