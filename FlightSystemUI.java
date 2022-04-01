@@ -118,6 +118,10 @@ public class FlightSystemUI {
         }
         return myChoice;
     }
+
+    /**
+     * Function to create user
+     */
     private void createAccount(){
         System.out.println("Username:");
         String userName=scan.next();
@@ -143,6 +147,9 @@ public class FlightSystemUI {
         }
     }
 
+    /**
+     * Function books a flight off of the user's departure and arrival choices
+     */
     public void bookFlight() {
         String depPort, arrPort;
         ArrayList<Flight> allFlights = flights.getFlights();
@@ -165,6 +172,9 @@ public class FlightSystemUI {
         }
     }
 
+    /**
+     * Books a hotel based off of the User's preferences
+     */
     public void bookHotel() {
         String state, city;
         ArrayList<Hotel> allHotels = hotels.getHotels();
@@ -185,6 +195,9 @@ public class FlightSystemUI {
         }
     }
 
+    /**
+     * Prints all the user's past and present flights
+     */
     public void viewFlights() {
         System.out.println("Here are all of your previous flights");
         for (PlaneTicket t : currentUser.getTickets()) {
@@ -192,17 +205,27 @@ public class FlightSystemUI {
         }
     }
 
+     /**
+     * Prints all the user's past, present, and future flights
+     */
     public void viewHotelBookings() {
         System.out.println("Here are all of your hotel bookings:");
         currentUser.printHotelBookings();
         
     }
 
+    /**
+     * Prints out the user's family
+     */
     public void viewFamily() {
         System.out.println("Here are your linked family members:");
         currentUser.printLinkedAccounts();
     }
 
+    /**
+     * Extits the program
+     * @param keyword must be "q" to quit
+     */
     public void quit(String keyword) {
         if (keyword.equalsIgnoreCase("quit"))
             System.exit(0);
