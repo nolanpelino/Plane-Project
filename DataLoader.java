@@ -52,27 +52,24 @@ public class DataLoader extends DataConstants {
         ArrayList<Hotel> hotels = new ArrayList<Hotel>();
         ArrayList<Room> rooms = new ArrayList<Room>();
         try{
+            FileReader hotelReader = new FileReader(HOTELS_FILENAME);
+            FileReader roomReader = new FileReader(ROOMS_FILENAME);
             JSONParser parser = new JSONParser();
-            JSONArray hotelsJSON = (JSONArray) new JSONParser().parse(HOTELS_FILENAME);
-            JSONArray roomsJSON = (JSONArray) new JSONParser().parse(HOTELS_FILENAME);
+            JSONArray hotelsJSON = (JSONArray) new JSONParser().parse(hotelReader);
+            JSONArray roomsJSON = (JSONArray) new JSONParser().parse(roomReader);
             for(int i=0; i<hotelsJSON.size(); i++){
-                JSONObject hotelJSON = (JSONObject)roomsJSON.get(i);
+                JSONObject hotelJSON = (JSONObject)hotelsJSON.get(i);
                 String hotelAddress = (String)hotelJSON.get(HOTEL_ADDRESS);
                 String hotelName = (String)hotelJSON.get(HOTEL_NAME);
                 String hotelState = (String)hotelJSON.get(HOTEL_STATE);
                 String hotelCity = (String)hotelJSON.get(HOTEL_CITY);
-                int price = (int)hotelJSON.get(HOTEL_PRICE); 
-                int hotelStars = (int)hotelJSON.get(HOTEL_STARS);
+                int price = ((Long)hotelJSON.get(HOTEL_PRICE)).intValue(); 
+                int hotelStars = ((Long)hotelJSON.get(HOTEL_STARS)).intValue();
                 Boolean hotelPool = (Boolean)hotelJSON.get(HOTEL_HASPOOL);
-                UUID hotelID = (UUID)hotelJSON.get(HOTEL_ID);
+                UUID hotelID = UUID.fromString((String)hotelJSON.get(HOTEL_ID));
                 
-                for(int j=0; j<roomsJSON.size(); i++){
-                    int roomNumber = (int)hotelJSON.get(ROOM_NUMBER);
-                    int roomPrice = (int)hotelJSON.get(ROOM_PRICE);
-                    int numBeds = (int)hotelJSON.get(ROOM_BEDS);
-                    rooms.add(new Room(roomNumber, roomPrice, numBeds));
-                }
                 hotels.add(new Hotel(rooms, hotelAddress, hotelCity, hotelState, hotelName, price, hotelID, hotelStars, hotelPool));
+                rooms.clear();
             }
         }
         catch (Exception e) {
