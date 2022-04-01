@@ -9,7 +9,6 @@ public class FlightList {
     private ArrayList<Flight> flights;
 
     private FlightList() throws FileNotFoundException, IOException, ParseException {
-        DataLoader flightLoader = new DataLoader();
         flights = DataLoader.getFlights();
     }
 
@@ -21,6 +20,20 @@ public class FlightList {
         else {
             return flightList;
         }
+    }
+
+    /**
+     * Checks to see if user's flight already exists
+     * @param userName
+     * @return
+     */
+    public boolean haveFlight(int flightNum){
+        for(Flight fl : flights){
+            if(fl.getFlightNumber() == flightNum){
+                return true;
+            }
+        }
+        return false;
     }
 
     /**
@@ -38,9 +51,21 @@ public class FlightList {
     }
 
     /**
-     * @return The entire arraylist of Flights from dataLoader
-     */
-    public ArrayList<Flight> getFlights() {
+     * 
+     * @return the list of users
+     */ 
+    public ArrayList<User> getFlights() {
 		return flights;
 	}
+
+    public boolean addFlight(Seat[] seats, int flightlength, boolean hasTV,
+    String depart, String arrival, UUID id, int flightNumber, String airline, int connectingFlight) {
+        if(haveUser(username)) return false;
+        userL.add(new User(username, password, age, address, frequentFlyer, homeAirport, passport, hasDisability));
+        return true;
+    }
+
+    public void saveUsers() throws IOException, ParseException{
+        DataWriter.saveUsers();
+    }
 }
