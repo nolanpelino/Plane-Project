@@ -70,34 +70,6 @@ public class DataLoader extends DataConstants {
                 }
                 hotels.add(new Hotel(rooms, hotelAddress, hotelName, hotelStars, hotelPool, hotelID));
             }
-            // JSONArray a = (JSONArray) parser.parse(new FileReader(HOTELS_FILENAME));
-            // for (Object o: a) {
-            //     JSONObject hotel = (JSONObject) o;
-            //     JSONArray rooms = (JSONArray) hotel.get("hotelRooms");
-            //    for (Object c: rooms) {
-            //        JSONObject goon = (JSONObject) c;
-            //        int roomNumber = Integer.parseInt((String) goon.get("roomNumber"));
-            //       double price = Double.parseDouble((String) goon.get("price"));
-            //       int numBeds = Integer.parseInt((String)goon.get("numBeds"));
-            //        Room exor = new Room(roomNumber, price, numBeds);
-            //      totRooms.add(exor);
-            //     }
-
-            // String address = (String) hotel.get("hotelAddress");
-
-            // String name = (String) hotel.get("hotelName");
-
-            // int stars = (int) (double) hotel.get("hotelStars");
-
-            // boolean pool = (boolean) hotel.get("hotelPool");
-
-            // UUID id = (UUID) hotel.get("hotelID");
-            // Room[] fin = new Room[totRooms.size()];
-            // for (int h = 0; h < fin.length; h++) {
-            //     fin[h] = totRooms.get(h);
-            // }
-            // Hotel ex = new Hotel(fin, address, name, stars, pool, id);
-            // hotels.add(ex);
         }
         catch (Exception e) {
 			e.printStackTrace();
