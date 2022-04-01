@@ -59,7 +59,7 @@ public class DataLoader extends DataConstants {
                 JSONObject hotelJSON = (JSONObject)roomsJSON.get(i);
                 String hotelAddress = (String)hotelJSON.get(HOTEL_ADDRESS);
                 String hotelName = (String)hotelJSON.get(HOTEL_NAME);
-                String hotelStars = (String)hotelJSON.get(HOTEL_STARS);
+                int hotelStars = (int)hotelJSON.get(HOTEL_STARS);
                 Boolean hotelPool = (Boolean)hotelJSON.get(HOTEL_HASPOOL);
                 UUID hotelID = (UUID)hotelJSON.get(HOTEL_ID);
                 for(int j=0; j<roomsJSON.size(); i++){
@@ -99,6 +99,9 @@ public class DataLoader extends DataConstants {
             // Hotel ex = new Hotel(fin, address, name, stars, pool, id);
             // hotels.add(ex);
         }
+        catch (Exception e) {
+			e.printStackTrace();
+		}
         return hotels;
     }
 
