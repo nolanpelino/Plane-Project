@@ -73,7 +73,7 @@ public class DataWriter extends DataConstants {
         return flightInfo;
     }
 
-    public static void saveHotel() {
+    public static void saveHotel() throws FileNotFoundException, IOException, ParseException {
         HotelList hotels = HotelList.getInstance();
         ArrayList<Hotel> hList = hotels.getHotels();
         JSONArray jsonHotels = new JSONArray();

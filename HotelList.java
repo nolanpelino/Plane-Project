@@ -1,14 +1,18 @@
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
+
+import org.json.simple.parser.ParseException;
 
 public class HotelList {
     private static HotelList hotelList;
     private ArrayList<Hotel> hotels;
 
-    private HotelList() {
-        //TODO
+    private HotelList() throws FileNotFoundException, IOException, ParseException {
+        hotels = DataLoader.getHotels();
     }
 
-    public static HotelList getInstance() {
+    public static HotelList getInstance() throws FileNotFoundException, IOException, ParseException {
         if(hotelList == null) {
             hotelList = new HotelList();
             return hotelList;
