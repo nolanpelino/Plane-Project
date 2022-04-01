@@ -22,11 +22,14 @@ public class Hotel {
      * @param boolean
      * @param String
      */
-    public Hotel(ArrayList<Room> rooms, String address, String name, int stars, boolean pool, UUID id) {
+    public Hotel(ArrayList<Room> rooms, String address, String city, String state, String name, int price, UUID id, int stars, boolean pool) {
         this.rooms = rooms;
         this.address = address;
+        this.city = city;
+        this.state = state;
         this.name = name;
         this.stars = stars;
+        this.price = price;
         this.pool = pool;
         this.id = id;
     }
