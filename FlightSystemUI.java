@@ -143,7 +143,7 @@ public class FlightSystemUI {
             String homeAirport=scan.next();
             System.out.println("Passport? (true/false):");
             boolean passport=scan.nextBoolean();
-            scan.next();
+            scan.nextLine()
             System.out.println("Disability? (true/false):");
             boolean hasDisability=scan.nextBoolean();
             scan.nextLine();
