@@ -122,35 +122,39 @@ public class FlightSystemUI {
     /**
      * Function to create user
      */
-    private void createAccount(){
-        System.out.println("Username:");
-        String userName=scan.next();
-        System.out.println("Password:");
-        String password=scan.next();
-        System.out.println("Age:");
-        int age=scan.nextInt();
-        scan.nextLine();
-        System.out.println("Address:");
-        String address=scan.nextLine();
-        System.out.println("Frequent flyer? (true/false):");
-        boolean frequentFlyer=scan.nextBoolean();
-        scan.nextLine();
-        System.out.println("Home Airport code:");
-        String homeAirport=scan.next();
-        System.out.println("Passport? (true/false):");
-        boolean passport=scan.nextBoolean();
-        scan.next();
-        System.out.println("Disability? (true/false):");
-        boolean hasDisability=scan.nextBoolean();
-        scan.nextLine();
+    private void createAccount() {
+        boolean uniqueUsername = false;
+        while(!uniqueUsername) {
+            System.out.println("Username:");
+            String userName=scan.next();
+            System.out.println("Password:");
+            String password=scan.next();
+            System.out.println("Age:");
+            int age=scan.nextInt();
+            scan.nextLine();
+            System.out.println("Address:");
+            String address=scan.nextLine();
+            System.out.println("Frequent flyer? (true/false):");
+            boolean frequentFlyer=scan.nextBoolean();
+            scan.nextLine();
+            System.out.println("Home Airport code:");
+            String homeAirport=scan.next();
+            System.out.println("Passport? (true/false):");
+            boolean passport=scan.nextBoolean();
+            scan.next();
+            System.out.println("Disability? (true/false):");
+            boolean hasDisability=scan.nextBoolean();
+            scan.nextLine();
 
-        if(users.addUser(userName, password, age, address, frequentFlyer, homeAirport, passport, hasDisability)){
-            System.out.println("You have created an account!");
-        } else{
-            System.out.println("Oh no an account with that name exists");
+            if(users.addUser(userName, password, age, address, frequentFlyer, homeAirport, passport, hasDisability)){
+                System.out.println("You have created an account!");
+                uniqueUsername = true;
+            }
+            else {
+                System.out.println("Oh no an account with that name exists");
+            }
         }
     }
-
     /**
      * Function books a flight off of the user's departure and arrival choices
      */
