@@ -22,9 +22,10 @@ public class HotelList {
         }
     }
 
-    public Hotel getHotel(String adress) {
+
+    public Hotel getHotel(String address) {
         for (Hotel htl : hotels) {
-            if (htl.getAddress().equalsIgnoreCase(adress))
+            if (htl.getAddress().equalsIgnoreCase(address))
                 return htl;
         }
         System.out.println("Hotel not found");

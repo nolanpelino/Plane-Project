@@ -1,7 +1,7 @@
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
-
+import java.util.UUID;
 import org.json.simple.parser.ParseException;
 
 public class FlightList {
@@ -54,16 +54,18 @@ public class FlightList {
      * 
      * @return the list of users
      */ 
-    public ArrayList<User> getFlights() {
+    public ArrayList<Flight> getFlights() {
 		return flights;
 	}
 
     public boolean addFlight(Seat[] seats, int flightlength, boolean hasTV,
     String depart, String arrival, UUID id, int flightNumber, String airline, int connectingFlight) {
-        if(haveUser(username)) return false;
-        userL.add(new User(username, password, age, address, frequentFlyer, homeAirport, passport, hasDisability));
-        return true;
-    }
+        if(haveFlight(flightNumber)){
+            return false;
+        }
+            flights.add(new Flight(seats, flightlength, hasTV, depart, arrival, id, flightNumber, airline, connectingFlight));
+            return true;
+        }
 
     public void saveUsers() throws IOException, ParseException{
         DataWriter.saveUsers();
