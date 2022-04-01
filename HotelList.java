@@ -5,8 +5,8 @@ import java.util.ArrayList;
 import org.json.simple.parser.ParseException;
 
 public class HotelList {
-    private static HotelList hotelList;
-    private ArrayList<Hotel> hotels;
+    private static HotelList hotelList = null;
+    private ArrayList<Hotel> hotels = new ArrayList<Hotel>();
 
     private HotelList() throws FileNotFoundException, IOException, ParseException {
         hotels = DataLoader.getHotels();
