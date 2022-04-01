@@ -15,7 +15,52 @@ public class User extends BasicUser{
     private ArrayList<PlaneTicket> tickets;
     private ArrayList<HotelBooking> hotelBookings;
 
-
+    /**
+     * Constructor for loading from files
+     * @param username
+     * @param password
+     * @param age
+     * @param address
+     * @param hasDisability
+     * @param homeAirport
+     * @param passport
+     */
+    public User(String username, String password,UUID uuid, int age, String address, boolean frequentFlyer, String homeAirport, boolean passport, boolean hasDisability) {
+        super(username,age,passport,hasDisability);
+        this.username = username;
+        this.password = password;
+        this.age = age;
+        this.frequentFlyer = frequentFlyer;
+        this.uuid=uuid;
+        this.homeAirport = homeAirport;
+        this.address=address;
+        this.passport=passport;
+        this.hasDisability = hasDisability;
+    }
+    
+    /**
+     * Constructor for making user in the UI
+     * @param username
+     * @param password
+     * @param age
+     * @param address
+     * @param frequentFlyer
+     * @param homeAirport
+     * @param passport
+     * @param hasDisability
+     */
+    public User(String username, String password, int age, String address, boolean frequentFlyer, String homeAirport, boolean passport, boolean hasDisability) {
+        super(username,age,passport,hasDisability);
+        this.username = username;
+        this.password = password;
+        this.age = age;
+        this.uuid=UUID.randomUUID();
+        this.homeAirport = homeAirport;
+        this.address=address;
+        this.frequentFlyer = frequentFlyer;
+        this.passport=passport;
+        this.hasDisability = hasDisability;
+    }
 
     /**
      * @return The user's username as a string
