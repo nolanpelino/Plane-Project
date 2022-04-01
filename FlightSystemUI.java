@@ -1,4 +1,3 @@
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
@@ -16,6 +15,8 @@ public class FlightSystemUI {
         scan = new Scanner(System.in);
     }
     public void run() throws IOException, ParseException{
+        users = UserList.getInstance();
+        hotels = HotelList.getInstance();
         int choice;
         loginCheck();
         choice = displayOptions();
@@ -158,13 +159,10 @@ public class FlightSystemUI {
     }
     /**
      * Function books a flight off of the user's departure and arrival choices
-     * @throws ParseException
-     * @throws IOException
-     * @throws FileNotFoundException
      */
-    public void bookFlight() throws FileNotFoundException, IOException, ParseException {
+    public void bookFlight() {
         String depPort, arrPort;
-        flights = FlightList.getInstance();
+        ArrayList<Flight> allFlights = flights.getFlights();
         System.out.println("Flight booking protocol:\nEnter your departing airport: ");
         depPort = scan.next();
         quit(depPort);
@@ -175,8 +173,11 @@ public class FlightSystemUI {
         scan.nextLine();
         System.out.println("Here are the available flights:");
 
-        
-        for (Flight f : flights.getFlights()) {
+        for(Flight f : allFlights) {  // removes all flights that do not have the airports entered
+            if ((!f.getDeparture().equalsIgnoreCase(depPort)) || (!f.getArrival().equalsIgnoreCase(arrPort)))
+                allFlights.remove(f);
+        }
+        for (Flight f : allFlights) {
             f.printAllInfo();
         }
     }
