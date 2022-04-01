@@ -28,6 +28,9 @@ public abstract class DataConstants {
     protected static final String HOTEL_ROOMS= "hotelRooms";
     protected static final String HOTEL_HASPOOL = "hotelPool";
     protected static final String REVIEWS = "hotelReviews";
+    protected static final String ROOM_NUMBER = "roomNumber";
+    protected static final String ROOM_PRICE = "price";
+    protected static final String ROOM_BEDS = "numBeds";
     
     //Flight data constants
     protected static final String FLIGHT_SEATS = "flightseats";

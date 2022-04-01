@@ -50,36 +50,54 @@ public class DataLoader extends DataConstants {
 
     public static ArrayList<Hotel> getHotels() throws FileNotFoundException, IOException, ParseException {
         ArrayList<Hotel> hotels = new ArrayList<Hotel>();
-        ArrayList<Room> totRooms = new ArrayList<Room>();
-        JSONParser parser = new JSONParser();
-        JSONArray a = (JSONArray) parser.parse(new FileReader(HOTELS_FILENAME));
-        for (Object o: a) {
-            JSONObject hotel = (JSONObject) o;
-            JSONArray rooms = (JSONArray) hotel.get("hotelRooms");
-            for (Object c: rooms) {
-                JSONObject goon = (JSONObject) c;
-                int roomNumber = Integer.parseInt((String) goon.get("roomNumber"));
-                double price = Double.parseDouble((String) goon.get("price"));
-                int numBeds = Integer.parseInt((String)goon.get("numBeds"));
-                Room exor = new Room(roomNumber, price, numBeds);
-                totRooms.add(exor);
+        ArrayList<Room> rooms = new ArrayList<Room>();
+        try{
+            JSONParser parser = new JSONParser();
+            JSONArray hotelsJSON = (JSONArray) new JSONParser().parse(HOTELS_FILENAME);
+            JSONArray roomsJSON = (JSONArray) new JSONParser().parse(HOTELS_FILENAME);
+            for(int i=0; i<hotelsJSON.size(); i++){
+                JSONObject hotelJSON = (JSONObject)roomsJSON.get(i);
+                String hotelAddress = (String)hotelJSON.get(HOTEL_ADDRESS);
+                String hotelName = (String)hotelJSON.get(HOTEL_NAME);
+                String hotelStars = (String)hotelJSON.get(HOTEL_STARS);
+                Boolean hotelPool = (Boolean)hotelJSON.get(HOTEL_HASPOOL);
+                UUID hotelID = (UUID)hotelJSON.get(HOTEL_ID);
+                for(int j=0; j<roomsJSON.size(); i++){
+                    int roomNumber = (int)hotelJSON.get(ROOM_NUMBER);
+                    int roomPrice = (int)hotelJSON.get(ROOM_PRICE);
+                    int numBeds = (int)hotelJSON.get(ROOM_BEDS);
+                    rooms.add(new Room(roomNumber, roomPrice, numBeds));
+                }
+                hotels.add(new Hotel(rooms, hotelAddress, hotelName, hotelStars, hotelPool, hotelID));
             }
+            // JSONArray a = (JSONArray) parser.parse(new FileReader(HOTELS_FILENAME));
+            // for (Object o: a) {
+            //     JSONObject hotel = (JSONObject) o;
+            //     JSONArray rooms = (JSONArray) hotel.get("hotelRooms");
+            //    for (Object c: rooms) {
+            //        JSONObject goon = (JSONObject) c;
+            //        int roomNumber = Integer.parseInt((String) goon.get("roomNumber"));
+            //       double price = Double.parseDouble((String) goon.get("price"));
+            //       int numBeds = Integer.parseInt((String)goon.get("numBeds"));
+            //        Room exor = new Room(roomNumber, price, numBeds);
+            //      totRooms.add(exor);
+            //     }
 
-            String address = (String) hotel.get("hotelAddress");
+            // String address = (String) hotel.get("hotelAddress");
 
-            String name = (String) hotel.get("hotelName");
+            // String name = (String) hotel.get("hotelName");
 
-            int stars = (int) (double) hotel.get("hotelStars");
+            // int stars = (int) (double) hotel.get("hotelStars");
 
-            boolean pool = (boolean) hotel.get("hotelPool");
+            // boolean pool = (boolean) hotel.get("hotelPool");
 
-            UUID id = (UUID) hotel.get("hotelID");
-            Room[] fin = new Room[totRooms.size()];
-            for (int h = 0; h < fin.length; h++) {
-                fin[h] = totRooms.get(h);
-            }
-            Hotel ex = new Hotel(fin, address, name, stars, pool, id);
-            hotels.add(ex);
+            // UUID id = (UUID) hotel.get("hotelID");
+            // Room[] fin = new Room[totRooms.size()];
+            // for (int h = 0; h < fin.length; h++) {
+            //     fin[h] = totRooms.get(h);
+            // }
+            // Hotel ex = new Hotel(fin, address, name, stars, pool, id);
+            // hotels.add(ex);
         }
         return hotels;
     }

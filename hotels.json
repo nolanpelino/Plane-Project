@@ -1,8 +1,6 @@
 [
     {
         "hotelAddress":"8332 Willow Branch Dr",
-        "hotelState": "WA",
-        "hotelCity":"Seattle",
         "hotelName":"The Omni",
         "hotelStars":"****",
         "hotelPool":true,
