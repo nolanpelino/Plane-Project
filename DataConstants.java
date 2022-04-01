@@ -3,6 +3,7 @@ public abstract class DataConstants {
     protected static final String USERS_FILENAME = "users.json";
     protected static final String FLIGHTS_FILENAME = "flights.json";
     protected static final String HOTELS_FILENAME = "hotels.json";
+    protected static final String ROOMS_FILENAME = "rooms.json";
     
     //User data constants
     protected static final String USER_USERNAME = "username";

@@ -99,9 +99,6 @@ public class Hotel {
         return this.id;
     }
 
-    public void printBasicInfo() {
-        System.out.println("Hotel name: "+getName()+"\nAddress: "+getAddress()+"\nReviews: "+getRating());
-    }
     /**
      * Prints out all of the open rooms of a hotel object
      * @param Date

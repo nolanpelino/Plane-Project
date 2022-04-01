@@ -143,7 +143,7 @@ public class FlightSystemUI {
             String homeAirport=scan.next();
             System.out.println("Passport? (true/false):");
             boolean passport=scan.nextBoolean();
-            scan.nextLine()
+            scan.nextLine();
             System.out.println("Disability? (true/false):");
             boolean hasDisability=scan.nextBoolean();
             scan.nextLine();
@@ -188,21 +188,22 @@ public class FlightSystemUI {
     public void bookHotel() {
         String state, city;
         ArrayList<Hotel> allHotels = hotels.getHotels();
-        System.out.println("Hotel booking protocol:\nEnter State (Abrreviated)");
-        state = scan.next();
-        System.out.println("Enter city");
-        city = scan.next();
+        // System.out.println("Hotel booking protocol:\nEnter State (Abrreviated)");
+        // state = scan.next();
+        // System.out.println("Enter city");
+        // city = scan.next();
         System.out.println("Here are the available hotels");
 
-        for (Hotel h : allHotels) {
-            if ((!h.getState().equalsIgnoreCase(state)) || (!h.getCity().equalsIgnoreCase(city))) {
-                allHotels.remove(h);
-            }
-        }
 
-        for (Hotel h : allHotels) {
-            h.printBasicInfo();
-        }
+        // for (Hotel h : allHotels) {
+        //     if ((!h.getState().equalsIgnoreCase(state)) || (!h.getCity().equalsIgnoreCase(city))) {
+        //         allHotels.remove(h);
+        //     }
+        // }
+
+        // for (Hotel h : allHotels) {
+        //     System.out.println("Hotel name: "+h.getName()+"\nAddress: "+h.getAddress()+"\nReviews: "+h.getRating()+" stars");
+        // }
     }
 
     /**
