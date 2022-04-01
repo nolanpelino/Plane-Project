@@ -93,34 +93,66 @@ public class User extends BasicUser{
         return this.age;
     }
 
+    /**
+     * 
+     * @return User's Adress
+     */
     public String getAddress() {
         return this.address;
     }
 
+    /**
+     * 
+     * @return ArrayList of the user's family
+     * BasicUser objects
+     */
     public ArrayList<BasicUser> getFamilyUsers() {
         return this.familyUsers;
     }
 
+    /**
+     * @return String of the user's home airport
+     */
     public String getHomeAirport() {
         return this.homeAirport;
     }
 
+    /**
+     * 
+     * @return Boolean value of the user's disabiilites
+     */
     public boolean getHasDisability() {
         return this.hasDisability;
     }
 
+    /**
+     * 
+     * @return ArrayList of all the user's tickets
+     */
     public ArrayList<PlaneTicket> getTickets() {
         return this.tickets;
     }
 
+    /**
+     * 
+     * @return ArrayList of all the user's hotel's
+     */
     public ArrayList<HotelBooking> getHotelBookings() {
         return this.hotelBookings;
     }
 
+    /**
+     * 
+     * @return The user's frequent flyer status
+     */
     public boolean getFrFlyer() {
         return this.frequentFlyer;
     }
 
+    /**
+     * 
+     * @return The UUID of a user
+     */
     public UUID getUUID(){
         return this.uuid;
     }
