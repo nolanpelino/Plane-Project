@@ -127,14 +127,9 @@ public class FlightSystemUI {
         int age=scan.nextInt();
         System.out.println("Address:");
         String address=scan.next();
-        System.out.println("Frequent flyer? (y/n):");
-        boolean frequentFlyer=false;
-        if (scan.next().equalsIgnoreCase("y")) {
-            frequentFlyer=true;
-        }
-        else {
-            frequentFlyer=false;
-        }
+        scan.nextLine();
+        System.out.println("Frequent flyer? (true/false):");
+        boolean frequentFlyer=scan.nextBoolean();
         System.out.println("Home Airport code:");
         String homeAirport=scan.next();
         System.out.println("Passport? (true/false):");
