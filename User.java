@@ -27,10 +27,15 @@ public class User extends BasicUser{
      */
     public User(String username, String password,UUID uuid, int age, String address, boolean frequentFlyer, String homeAirport, boolean passport, boolean hasDisability) {
         super(username,age,passport,hasDisability);
+        this.username = username;
+        this.password = password;
+        this.age = age;
+        this.frequentFlyer = frequentFlyer;
         this.uuid=uuid;
         this.homeAirport = homeAirport;
         this.address=address;
         this.passport=passport;
+        this.hasDisability = hasDisability;
     }
     
     /**
@@ -46,10 +51,15 @@ public class User extends BasicUser{
      */
     public User(String username, String password, int age, String address, boolean frequentFlyer, String homeAirport, boolean passport, boolean hasDisability) {
         super(username,age,passport,hasDisability);
+        this.username = username;
+        this.password = password;
+        this.age = age;
         this.uuid=UUID.randomUUID();
         this.homeAirport = homeAirport;
         this.address=address;
+        this.frequentFlyer = frequentFlyer;
         this.passport=passport;
+        this.hasDisability = hasDisability;
     }
 
     /**
