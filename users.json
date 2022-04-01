@@ -9,5 +9,16 @@
         "homeAirport": "ODO",
         "passport": true,
         "hasDisability": false
+    },
+    {
+        "username": "user",
+        "password": "pass",
+        "uuid": "7244f7ac-a242-417d-9aa5-6ad7fb5fde5b",
+        "age":20,
+        "address":"638 W University Boulevard\nOdessa, Texas 79964\nUnited States",
+        "frqflyer":true,
+        "homeAirport": "ODO",
+        "passport": true,
+        "hasDisability": false
     }
 ]
