@@ -9,7 +9,7 @@ public class Hotel {
     private String name;
     private int price;
     private UUID id;
-    private Room[] rooms;
+    private ArrayList<Room> rooms;
     private boolean pool;
     private int stars;
 
@@ -22,7 +22,7 @@ public class Hotel {
      * @param boolean
      * @param String
      */
-    public Hotel(Room[] rooms, String address, String name, int stars, boolean pool, UUID id) {
+    public Hotel(ArrayList<Room> rooms, String address, String name, int stars, boolean pool, UUID id) {
         this.rooms = rooms;
         this.address = address;
         this.name = name;
@@ -36,7 +36,7 @@ public class Hotel {
      * @return Room[]
      */
 
-    public Room[] getRooms(){
+    public ArrayList<Room> getRooms(){
         return this.rooms;
     }
 
@@ -108,16 +108,16 @@ public class Hotel {
         boolean completelyEmpty;
         int printCounter = 0;
 
-        for(int i = 0; i < rooms.length; i++) {
+        for(int i = 0; i < rooms.size(); i++) {
             completelyEmpty = true;
             for(Date sd : stayDates) { // goes through every date to ensure the are all open
-                if (rooms[i].getAvailability(sd) == false) {
+                if (rooms.get(i).getAvailability(sd) == false) {
                     completelyEmpty = false;
                     continue;  // if one of the dates has a booked room, the for each loop ends
                 }
             }
             if (completelyEmpty) {
-                availRooms.add(rooms[i]);
+                availRooms.add(rooms.get(i));
             } else {
                 System.out.println("Sorry, there are no rooms available for your chosen dates.");
             }
@@ -140,10 +140,10 @@ public class Hotel {
      * @param stayDates
      */
     public void chooseRoom(int roomNum, ArrayList<Date> stayDates) {  // Does not include a scanner. Input must occur in UI
-        for (int i = 0; i < rooms.length; i++) {
-            if(roomNum == rooms[i].getRoomNumber()) {
+        for (int i = 0; i < rooms.size(); i++) {
+            if(roomNum == rooms.get(i).getRoomNumber()) {
                 for(Date stdt : stayDates) {
-                    rooms[i].setAvailability(stdt);  // Sets availability as unavailable for all days in the passed array
+                    rooms.get(i).setAvailability(stdt);  // Sets availability as unavailable for all days in the passed array
                 }
             }
         }
