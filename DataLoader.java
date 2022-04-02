@@ -67,7 +67,17 @@ public class DataLoader extends DataConstants {
                 int hotelStars = ((Long)hotelJSON.get(HOTEL_STARS)).intValue();
                 Boolean hotelPool = (Boolean)hotelJSON.get(HOTEL_HASPOOL);
                 UUID hotelID = UUID.fromString((String)hotelJSON.get(HOTEL_ID));
-                
+
+                JSONArray jsonRooms = (JSONArray)hotelJSON.get(HOTEL_ROOMS);
+                for(int j = 0; j < jsonRooms.size(); j++) {
+                    JSONObject roomVariable = (JSONObject)jsonRooms.get(j);
+                    int roomNum = ((Long)roomVariable.get(ROOM_NUMBER)).intValue();
+                    double roomPrice = ((Long)roomVariable.get(ROOM_PRICE)).doubleValue();
+                    int numOfBeds = ((Long)roomVariable.get(ROOM_BEDS)).intValue();
+                    
+                    Room newRoom = new Room(roomNum, roomPrice, numOfBeds);
+                    rooms.add(newRoom);
+                }
                 hotels.add(new Hotel(rooms, hotelAddress, hotelCity, hotelState, hotelName, price, hotelID, hotelStars, hotelPool));
                 rooms.clear();
             }
