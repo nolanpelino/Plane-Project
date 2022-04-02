@@ -192,7 +192,7 @@ public class FlightSystemUI {
         // state = scan.next();
         // System.out.println("Enter city");
         // city = scan.next();
-        System.out.println("Here are the available hotels");
+        System.out.println("Here are the available hotels:\n----------------------------");
 
 
         // for (Hotel h : allHotels) {
@@ -201,9 +201,10 @@ public class FlightSystemUI {
         //     }
         // }
 
-        // for (Hotel h : allHotels) {
-        //     System.out.println("Hotel name: "+h.getName()+"\nAddress: "+h.getAddress()+"\nReviews: "+h.getRating()+" stars");
-        // }
+        for (Hotel h : allHotels) {
+            System.out.println("Hotel name: "+h.getName()+"\nAddress: "+h.getAddress()+"\nReviews: "+h.getRating()+" stars");
+            System.out.println("----------------------------");
+        }
     }
 
     /**
