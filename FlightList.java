@@ -67,7 +67,7 @@ public class FlightList {
             return true;
         }
 
-    public void saveUsers() throws IOException, ParseException{
-        DataWriter.saveUsers();
+    public void saveFlights() throws IOException, ParseException{
+        DataWriter.saveFlights();
     }
 }
