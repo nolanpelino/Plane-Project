@@ -114,7 +114,7 @@ public class DataLoader extends DataConstants {
             UUID id = UUID.fromString(UUIDstring);
             int flightNumber = (int) ((Long) flight.get("flightNumber")).intValue();
             String airline = (String) flight.get("flightAirline");
-            int connectingNum = (int) flight.get("connectingFlight");
+            int connectingNum = (int) ((Long) flight.get("connectingFlight")).intValue();
             Seat[] epi = new Seat[seats.size()];
             for (int g = 0; g < epi.length; g++) {
                 epi[g] = seats.get(g);
