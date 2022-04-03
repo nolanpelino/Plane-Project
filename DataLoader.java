@@ -106,14 +106,15 @@ public class DataLoader extends DataConstants {
                 Seat ex2 = new Seat(price, seatSection, row, seatPosition, extraLegRoom);
                 seats.add(ex2);
             }
-            int flightLength = (int) (double) flight.get("flightlength");
+            int flightLength = (int) ((Long) flight.get("flightlength")).intValue();
             boolean hasTV = (boolean) flight.get("flightTV");
             String depart = (String) flight.get("flightDeparture");
             String arrival = (String) flight.get("flightArrival");
-            UUID id = (UUID) flight.get("flightID");
-            int flightNumber = (int) flight.get("flightNumber");
+            String UUIDstring = (String) flight.get("flightID");
+            UUID id = UUID.fromString(UUIDstring);
+            int flightNumber = (int) ((Long) flight.get("flightNumber")).intValue();
             String airline = (String) flight.get("flightAirline");
-            int connectingNum = (int) flight.get("connectingFLNumber");
+            int connectingNum = (int) flight.get("connectingFlight");
             Seat[] epi = new Seat[seats.size()];
             for (int g = 0; g < epi.length; g++) {
                 epi[g] = seats.get(g);
