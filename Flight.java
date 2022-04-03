@@ -163,7 +163,7 @@ public class Flight {
         if(timeMins != 0) 
             System.out.println(" and " + timeMins + " minutes");
             
-        System.out.print("This flight has " + getOpenSeats().size() + " open seats");
+        System.out.print("\nThis flight has " + getOpenSeats().size() + " open seats");
         if(hasTVs())
             System.out.println(" each with a TV.");
         else
