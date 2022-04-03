@@ -162,6 +162,7 @@ public class FlightSystemUI {
      */
     public void bookFlight() {
         String depPort, arrPort;
+        flights = FlightList.getInstance();
         ArrayList<Flight> allFlights = flights.getFlights();
         System.out.println("Flight booking protocol:\nEnter your departing airport: ");
         depPort = scan.next();
