@@ -15,11 +15,8 @@ public class FlightList {
     public static FlightList getInstance() throws FileNotFoundException, IOException, ParseException {
         if(flightList == null) {
             flightList = new FlightList();
+	}
             return flightList;
-        }
-        else {
-            return flightList;
-        }
     }
 
     /**
