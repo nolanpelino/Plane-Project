@@ -160,7 +160,7 @@ public class FlightSystemUI {
     /**
      * Function books a flight off of the user's departure and arrival choices
      */
-    public void bookFlight() {
+    public void bookFlight() throws FileNotFoundException, IOException, ParseException {
         String depPort, arrPort;
         flights = FlightList.getInstance();
         ArrayList<Flight> allFlights = flights.getFlights();
