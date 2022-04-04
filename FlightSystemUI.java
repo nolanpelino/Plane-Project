@@ -192,7 +192,7 @@ public class FlightSystemUI {
         String userAnswer = scan.next();
         if (userAnswer.equalsIgnoreCase("y")) {
         	bookedFlight = allFlights.get(0);
-        	bookedSeat = bookedFlight.takeSeat("a"); // Doesn't work as intended
+        	bookedSeat = bookedFlight.takeSeat("1a"); // Doesn't work as intended
         	PlaneTicket planeTicket = new PlaneTicket(bookedFlight, bookedFlight.getAirline(), bookedFlight.getLength(), bookedSeat, bookedFlight.getArrival());
         	System.out.println("Your flight has been booked!\n");
         	currentUser.addFlightTicket(planeTicket);

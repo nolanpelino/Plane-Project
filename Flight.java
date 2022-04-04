@@ -134,20 +134,21 @@ public class Flight {
      * Allows the user to take a seat from the flight objects seat ArrayList
      * @param String
      */
-    public void takeSeat(String seatNum) {
+    public Seat takeSeat(String seatNum) {
         for (int i = 0; i < seats.length; i++) {
             if (seats[i].getExactPosition().equalsIgnoreCase(seatNum)) {
                 if (seats[i].getAvailability()) {
                     seats[i].fillSeat();
                     System.out.println("Seat was availible and has been filled.");
-                    return;
+                    return seats[i];
                 } else {
                     System.out.println("Seat is already taken");
-                    return;
+                    return null;
                 }
             }
         }
         System.out.println("Seat not found");
+        return null;
     }
 
     /**

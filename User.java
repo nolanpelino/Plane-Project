@@ -7,13 +7,13 @@ public class User extends BasicUser{
     private UUID uuid;
     private int age;
     private String address;
-    private ArrayList<BasicUser> familyUsers;
+    private ArrayList<BasicUser> familyUsers = new ArrayList<BasicUser>();
     private boolean frequentFlyer;
     private String homeAirport;
     private boolean passport;
     private boolean hasDisability;
-    private ArrayList<PlaneTicket> tickets;
-    private ArrayList<HotelBooking> hotelBookings;
+    private ArrayList<PlaneTicket> tickets = new ArrayList<PlaneTicket>();
+    private ArrayList<HotelBooking> hotelBookings = new ArrayList<HotelBooking>();
 
     /**
      * Constructor for loading from files
