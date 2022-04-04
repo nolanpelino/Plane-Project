@@ -1,6 +1,8 @@
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
+import java.util.Iterator;
 import java.util.Scanner;
 
 import org.json.simple.parser.ParseException;
@@ -84,6 +86,7 @@ public class FlightSystemUI {
                 if (us.getUsername().equals(usname) && us.getPassword().equals(password)) {
                     exists = true;
                     System.out.println("Logging in...");
+                    currentUser = us;
                     continue;
                 }
             }
@@ -163,6 +166,7 @@ public class FlightSystemUI {
     public void bookFlight() throws IOException, ParseException {
         String depPort, arrPort;
         flights = FlightList.getInstance();
+        Flight bookedFlight;
         ArrayList<Flight> allFlights = flights.getFlights();
         System.out.println("Flight booking protocol:\nEnter your departing airport: ");
         depPort = scan.next();
@@ -172,35 +176,58 @@ public class FlightSystemUI {
         System.out.println("Enter your arrival airport: ");
         arrPort = scan.next();
         scan.nextLine();
-        System.out.println("Here are the available flights:");
-
-        for(Flight f : allFlights) {  // removes all flights that do not have the airports entered
-            if ((!f.getDeparture().equalsIgnoreCase(depPort)) || (!f.getArrival().equalsIgnoreCase(arrPort)))
-                allFlights.remove(f);
+        System.out.println("Here are the available flights:\n------------------------------------------");
+        
+        for(Iterator<Flight> iterator = allFlights.iterator(); iterator.hasNext();) {  // removes all flights that do not have the airports entered
+            Flight f = iterator.next();
+        	if ((!f.getDeparture().equalsIgnoreCase(depPort)) || (!f.getArrival().equalsIgnoreCase(arrPort)))
+                iterator.remove();
         }
         for (Flight f : allFlights) {
             f.printAllInfo();
+            System.out.println("------------------------------------------");
         }
+        System.out.println("Do you want to book this flight? Y/N? ");
+        String userAnswer = scan.next();
+        if (userAnswer.equalsIgnoreCase("y")) {
+        	bookedFlight = allFlights.get(0); //need to add bookedFlight to the user
+        	System.out.println("Your flight has been booked!\n");
+        	
+        }
+        else if(userAnswer.equalsIgnoreCase("n")) {
+        	System.out.println("Restarting flight booking.\n");
+        	bookFlight();
+        }
+        else {
+        	System.out.println("Sorry, thats not a valid answer. Restarting flight booking.\n");
+        	bookFlight();
+        }
+        
     }
 
     /**
      * Books a hotel based off of the User's preferences
+     * @throws ParseException 
+     * @throws IOException 
+     * @throws FileNotFoundException 
      */
-    public void bookHotel() {
+    public void bookHotel() throws IOException, ParseException {
         String state, city;
+        hotels = HotelList.getInstance();
         ArrayList<Hotel> allHotels = hotels.getHotels();
-        // System.out.println("Hotel booking protocol:\nEnter State (Abrreviated)");
-        // state = scan.next();
-        // System.out.println("Enter city");
-        // city = scan.next();
+        System.out.println("Hotel booking protocol:\nEnter State (Abrreviated)");
+        state = scan.next();
+        System.out.println("Enter city");
+        city = scan.next();
         System.out.println("Here are the available hotels:\n----------------------------");
 
 
-        // for (Hotel h : allHotels) {
-        //     if ((!h.getState().equalsIgnoreCase(state)) || (!h.getCity().equalsIgnoreCase(city))) {
-        //         allHotels.remove(h);
-        //     }
-        // }
+        for (Iterator<Hotel> iterator = allHotels.iterator(); iterator.hasNext();) {
+        	Hotel h = iterator.next();
+             if ((!h.getState().equalsIgnoreCase(state)) && (!h.getCity().equalsIgnoreCase(city))) {
+                 iterator.remove();
+             }
+         }
 
         for (Hotel h : allHotels) {
             System.out.println("Hotel name: "+h.getName()+"\nAddress: "+h.getAddress()+"\nReviews: "+h.getRating()+" stars");
@@ -213,6 +240,7 @@ public class FlightSystemUI {
      */
     public void viewFlights() {
         System.out.println("Here are all of your previous flights");
+        
         for (PlaneTicket t : currentUser.getTickets()) {
             t.displayTicket();
         }
