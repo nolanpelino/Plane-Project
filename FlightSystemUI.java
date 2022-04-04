@@ -166,7 +166,8 @@ public class FlightSystemUI {
     public void bookFlight() throws IOException, ParseException {
         String depPort, arrPort;
         flights = FlightList.getInstance();
-        Flight bookedFlight;
+        Flight bookedFlight = null;
+        Seat bookedSeat;
         ArrayList<Flight> allFlights = flights.getFlights();
         System.out.println("Flight booking protocol:\nEnter your departing airport: ");
         depPort = scan.next();
@@ -190,8 +191,11 @@ public class FlightSystemUI {
         System.out.println("Do you want to book this flight? Y/N? ");
         String userAnswer = scan.next();
         if (userAnswer.equalsIgnoreCase("y")) {
-        	bookedFlight = allFlights.get(0); //need to add bookedFlight to the user
+        	bookedFlight = allFlights.get(0);
+        	bookedSeat = bookedFlight.takeSeat("a"); // Doesn't work as intended
+        	PlaneTicket planeTicket = new PlaneTicket(bookedFlight, bookedFlight.getAirline(), bookedFlight.getLength(), bookedSeat, bookedFlight.getArrival());
         	System.out.println("Your flight has been booked!\n");
+        	currentUser.addFlightTicket(planeTicket);
         	
         }
         else if(userAnswer.equalsIgnoreCase("n")) {
