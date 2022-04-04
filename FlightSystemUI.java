@@ -220,6 +220,7 @@ public class FlightSystemUI {
      */
     public void bookHotel() throws IOException, ParseException {
         String state, city;
+        Hotel bookedHotel = null;
         hotels = HotelList.getInstance();
         ArrayList<Hotel> allHotels = hotels.getHotels();
         System.out.println("Hotel booking protocol:\nEnter State (Abrreviated)");
@@ -240,6 +241,13 @@ public class FlightSystemUI {
             System.out.println("Hotel name: "+h.getName()+"\nAddress: "+h.getAddress()+"\nReviews: "+h.getRating()+" stars");
             System.out.println("----------------------------");
         }
+        System.out.println("Do you want to book this hotel? Y/N? ");
+        // String userAnswer = scan.next();
+        // if (userAnswer.equalsIgnoreCase("y")) {
+        //     bookedHotel=allHotels.get(0);            HOTEL IS NEVER BOOKED 
+        //     bookedHotel.getRooms();          something like this might work but chooseroom wants an arraylist...
+        //     bookedHotel.chooseRoom(1, 7);
+        // }
     }
 
     /**
