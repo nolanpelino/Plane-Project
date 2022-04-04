@@ -196,4 +196,10 @@ public class User extends BasicUser{
         }
 
     }
+    /*
+    * Adds a PlaneTicket to the ArrayList
+    */
+    public void addFlightTicket(PlaneTicket planeTicket) {
+    	tickets.add(planeTicket);
+    }
 }
