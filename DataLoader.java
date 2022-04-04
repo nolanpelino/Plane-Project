@@ -53,10 +53,8 @@ public class DataLoader extends DataConstants {
         ArrayList<Room> rooms = new ArrayList<Room>();
         try{
             FileReader hotelReader = new FileReader(HOTELS_FILENAME);
-            FileReader roomReader = new FileReader(ROOMS_FILENAME);
             JSONParser parser = new JSONParser();
             JSONArray hotelsJSON = (JSONArray) new JSONParser().parse(hotelReader);
-            JSONArray roomsJSON = (JSONArray) new JSONParser().parse(roomReader);
             for(int i=0; i<hotelsJSON.size(); i++){
                 JSONObject hotelJSON = (JSONObject)hotelsJSON.get(i);
                 String hotelAddress = (String)hotelJSON.get(HOTEL_ADDRESS);
