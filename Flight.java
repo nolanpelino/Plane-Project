@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.UUID;
+import java.util.Random;
 
 public class Flight {
     private Seat[] seats;
@@ -149,6 +150,13 @@ public class Flight {
         }
         System.out.println("Seat not found");
         return null;
+    }
+    public String getGate(){
+        char myGate=departureAirport.charAt(0);
+        Random rand = new Random();
+        String finalGate=String.valueOf(rand.nextInt(10));
+        return myGate+finalGate;
+
     }
 
     /**

@@ -11,7 +11,7 @@ public class FlightSystemUI {
     private HotelList hotels;
     private UserList users;
     private FlightList flights;
-    private User currentUser;
+    private static User currentUser;
 
     public FlightSystemUI(){
         scan = new Scanner(System.in);
@@ -22,6 +22,7 @@ public class FlightSystemUI {
         int choice;
         loginCheck();
         choice = displayOptions();
+        while(choice!=6){
         switch(choice) {
             case 1: bookFlight();
                     break;
@@ -34,6 +35,8 @@ public class FlightSystemUI {
             case 5: viewFamily();
                     break;
         }
+        choice = displayOptions();
+    }
     }
 
 
@@ -193,7 +196,7 @@ public class FlightSystemUI {
         if (userAnswer.equalsIgnoreCase("y")) {
         	bookedFlight = allFlights.get(0);
         	bookedSeat = bookedFlight.takeSeat("1a"); // Doesn't work as intended
-        	PlaneTicket planeTicket = new PlaneTicket(bookedFlight, bookedFlight.getAirline(), bookedFlight.getLength(), bookedSeat, bookedFlight.getArrival());
+        	PlaneTicket planeTicket = new PlaneTicket(bookedFlight, bookedSeat, bookedFlight.getGate());
         	System.out.println("Your flight has been booked!\n");
         	currentUser.addFlightTicket(planeTicket);
         	
@@ -274,6 +277,10 @@ public class FlightSystemUI {
     public void quit(String keyword) {
         if (keyword.equalsIgnoreCase("quit"))
             System.exit(0);
+    }
+
+    public static User getCurrentUser(){
+        return currentUser;
     }
 
     public static void main(String[] args) throws IOException, ParseException {
