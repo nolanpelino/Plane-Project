@@ -153,7 +153,7 @@ public class User extends BasicUser{
      * 
      * @return The UUID of a user
      */
-    public UUID getUUID(){
+    public UUID getUUID() {
         return this.uuid;
     }
 
@@ -190,18 +190,23 @@ public class User extends BasicUser{
             htl.displayHBooking();
         }
     }
+
+    /**
+     * Prints all users in the family
+     */
     public void printLinkedAccounts() {
         for (BasicUser bsc : familyUsers) {
             bsc.displayAccount();
         }
-
     }
+
     /*
     * Adds a PlaneTicket to the ArrayList
     */
     public void addFlightTicket(PlaneTicket planeTicket) {
     	tickets.add(planeTicket);
     }
+
     /*
     * Adds a HotelBooking to the ArrayList
     */
