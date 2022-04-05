@@ -12,6 +12,12 @@ public class HotelList {
         hotels = DataLoader.getHotels();
     }
 
+    /**
+     * @return An instance of a hotel list if it is not null
+     * @throws FileNotFoundException
+     * @throws IOException
+     * @throws ParseException
+     */
     public static HotelList getInstance() throws FileNotFoundException, IOException, ParseException {
         if(hotelList == null) {
             hotelList = new HotelList();
@@ -22,7 +28,10 @@ public class HotelList {
         }
     }
 
-
+    /**
+     * @param address
+     * @return A hotel object matching the passed in address
+     */
     public Hotel getHotel(String address) {
         for (Hotel htl : hotels) {
             if (htl.getAddress().equalsIgnoreCase(address))
@@ -32,6 +41,9 @@ public class HotelList {
         return null;
     }
 
+    /**
+     * @return ArrayList contained in the HotelList object
+     */
     public ArrayList<Hotel> getHotels() {
 		return hotels;
 	}
