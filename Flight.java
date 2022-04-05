@@ -156,12 +156,11 @@ public class Flight {
      * @return A string of the flight's gate number
      * One character and one Int
      */
-    public String getGate(){
+    public String getGate() {
         char myGate=departureAirport.charAt(0);
         Random rand = new Random();
         String finalGate=String.valueOf(rand.nextInt(10));
         return myGate+finalGate;
-
     }
 
     /**
