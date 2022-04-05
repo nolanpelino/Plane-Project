@@ -202,4 +202,10 @@ public class User extends BasicUser{
     public void addFlightTicket(PlaneTicket planeTicket) {
     	tickets.add(planeTicket);
     }
+    /*
+    * Adds a HotelBooking to the ArrayList
+    */
+    public void addHotelBooking(HotelBooking hotelBooking) {
+    	hotelBookings.add(hotelBooking);
+    }
 }

@@ -1,8 +1,11 @@
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Iterator;
+import java.util.Locale;
+import java.util.Random;
 import java.util.Scanner;
 
 import org.json.simple.parser.ParseException;
@@ -223,6 +226,8 @@ public class FlightSystemUI {
         Hotel bookedHotel = null;
         hotels = HotelList.getInstance();
         ArrayList<Hotel> allHotels = hotels.getHotels();
+        ArrayList<Date> dates = new ArrayList<Date>();
+        Random r = new Random( System.currentTimeMillis() );
         System.out.println("Hotel booking protocol:\nEnter State (Abrreviated)");
         state = scan.next();
         System.out.println("Enter city");
@@ -242,12 +247,32 @@ public class FlightSystemUI {
             System.out.println("----------------------------");
         }
         System.out.println("Do you want to book this hotel? Y/N? ");
-        // String userAnswer = scan.next();
-        // if (userAnswer.equalsIgnoreCase("y")) {
-        //     bookedHotel=allHotels.get(0);            HOTEL IS NEVER BOOKED 
-        //     bookedHotel.getRooms();          something like this might work but chooseroom wants an arraylist...
-        //     bookedHotel.chooseRoom(1, 7);
-        // }
+         String userAnswer = scan.next();
+         if (userAnswer.equalsIgnoreCase("y")) {
+             bookedHotel=allHotels.get(0);            //HOTEL IS NEVER BOOKED, now kinda books
+             System.out.println("What is your arrival date? MM/DD/YYYY");
+             String firstDateS = scan.next(); 
+             int monthInt1 = Integer.parseInt(firstDateS.substring(0, 2));
+             int dayInt1 = Integer.parseInt(firstDateS.substring(3, 5));
+             int yearInt1 = Integer.parseInt(firstDateS.substring(6, 10));
+             Date randomDate = new Date(1220227200L * 1000);
+             dates.add(new Date(yearInt1-1900, monthInt1-1, dayInt1));
+             System.out.println("What is your departure date? MM/DD/YYYY");
+             String secondDateS = scan.next(); 
+             int monthInt2 = Integer.parseInt(secondDateS.substring(0, 2));
+             int dayInt2 = Integer.parseInt(secondDateS.substring(3, 5));
+             int yearInt2 = Integer.parseInt(secondDateS.substring(6, 10));
+             dates.add(new Date(yearInt2-1900, monthInt2-1, dayInt2));
+             bookedHotel.chooseRoom(1, dates);
+             bookedHotel.getRooms(); //something like this might work but chooseroom wants an arraylist...  
+             int confirmationNumber = 10000 + r.nextInt(20000);
+             Room tempRoom = new Room(20, 20.0, 20); 
+             HotelBooking hotelBooking = new HotelBooking(confirmationNumber, bookedHotel, dates, tempRoom, currentUser);
+             currentUser.addHotelBooking(hotelBooking);
+             System.out.println("Your hotel has been booked!");
+             
+         }
+        
     }
 
     /**
