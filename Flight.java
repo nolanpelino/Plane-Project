@@ -18,7 +18,7 @@ public class Flight {
      * @param Seat
      * @param int
      * @param boolean
-     * @param String
+     * @param String      
      * @param String
      * @param String
      * @param String
@@ -151,6 +151,11 @@ public class Flight {
         System.out.println("Seat not found");
         return null;
     }
+
+    /**
+     * @return A string of the flight's gate number
+     * One character and one Int
+     */
     public String getGate(){
         char myGate=departureAirport.charAt(0);
         Random rand = new Random();
