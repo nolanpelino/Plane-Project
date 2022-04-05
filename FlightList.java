@@ -24,7 +24,7 @@ public class FlightList {
      * @param userName
      * @return
      */
-    public boolean haveFlight(int flightNum){
+    public boolean haveFlight(int flightNum) {
         for(Flight fl : flights){
             if(fl.getFlightNumber() == flightNum){
                 return true;
