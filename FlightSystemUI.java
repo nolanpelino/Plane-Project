@@ -196,12 +196,20 @@ public class FlightSystemUI {
         }
         System.out.println("Do you want to book this flight? Y/N? ");
         String userAnswer = scan.next();
+
         if (userAnswer.equalsIgnoreCase("y")) {
         	bookedFlight = allFlights.get(0);
-        	bookedSeat = bookedFlight.takeSeat("1a"); // Doesn't work as intended
+            System.out.println("What seat would you like? (Please enter row and position ex:1a )");
+            String seatChoice =scan.next();
+        	bookedSeat = bookedFlight.takeSeat(seatChoice);
+            if(bookedSeat==null) {
+                System.out.println("Not a valid seat. Sorry!");
+            }
+            else{
         	PlaneTicket planeTicket = new PlaneTicket(bookedFlight, bookedSeat, bookedFlight.getGate());
         	System.out.println("Your flight has been booked!\n");
         	currentUser.addFlightTicket(planeTicket);
+            }
         	
         }
         else if(userAnswer.equalsIgnoreCase("n")) {
