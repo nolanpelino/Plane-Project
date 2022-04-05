@@ -39,7 +39,7 @@ public class Hotel {
      * @return Room[]
      */
 
-    public ArrayList<Room> getRooms(){
+    public ArrayList<Room> getRooms() {
         return this.rooms;
     }
 
@@ -59,10 +59,16 @@ public class Hotel {
         return this.address;
     }
 
+    /**
+     * @return The state the hotel is located in
+     */
     public String getState() {
         return this.state;
     }
 
+    /**
+     * @return The city the hotel is located in
+     */
     public String getCity() {
         return this.city;
     }
