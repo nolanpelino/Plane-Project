@@ -312,7 +312,11 @@ public class FlightSystemUI {
             System.exit(0);
     }
 
-    public static User getCurrentUser(){
+    /**
+     * 
+     * @return An instance of the user contained in the UI object
+     */
+    public static User getCurrentUser() {
         return currentUser;
     }
 
