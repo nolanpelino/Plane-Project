@@ -55,6 +55,19 @@ public class FlightList {
 		return flights;
 	}
 
+    /**
+     * Adds a flight to the contained ArrayList
+     * @param seats
+     * @param flightlength
+     * @param hasTV
+     * @param depart
+     * @param arrival
+     * @param id
+     * @param flightNumber
+     * @param airline
+     * @param connectingFlight
+     * @return True if the flight does not already exist
+     */
     public boolean addFlight(Seat[] seats, int flightlength, boolean hasTV,
     String depart, String arrival, UUID id, int flightNumber, String airline, int connectingFlight) {
         if(haveFlight(flightNumber)){
@@ -64,7 +77,12 @@ public class FlightList {
             return true;
         }
 
-    public void saveFlights() throws IOException, ParseException{
+    /**
+     * Adds the fights to the data writer
+     * @throws IOException
+     * @throws ParseException
+     */
+    public void saveFlights() throws IOException, ParseException {
         DataWriter.saveFlights();
     }
 }
