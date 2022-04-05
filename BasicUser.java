@@ -41,6 +41,10 @@ public class BasicUser {
     public boolean isDisabled(){
         return hasDisability;
     }
+
+    /**
+     * Prints out the username
+     */
     public void displayAccount() {
         System.out.println(username);
     }
