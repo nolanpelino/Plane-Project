@@ -49,10 +49,23 @@ public class UserList {
 		return userL;
 	}
 
+    /**
+     * Adds a user to the UserList contained ArrayList<User>
+     * @param username
+     * @param password
+     * @param age
+     * @param address
+     * @param frequentFlyer
+     * @param homeAirport
+     * @param passport
+     * @param hasDisability
+     * @return True if the user does not already exist
+     */
     public boolean addUser(String username, String password, int age, String address, boolean frequentFlyer, String homeAirport, boolean passport, boolean hasDisability) {
-    if(haveUser(username)) return false;
-    userL.add(new User(username, password, age, address, frequentFlyer, homeAirport, passport, hasDisability));
-    return true;
+        if(haveUser(username)) 
+            return false;
+        userL.add(new User(username, password, age, address, frequentFlyer, homeAirport, passport, hasDisability));
+        return true;
     }
 
     public void saveUsers() throws IOException, ParseException{
