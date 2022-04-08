@@ -12,6 +12,7 @@ public class Flight {
     private int flightNumber;
     private String airline;
     private int connectingFlight;
+    ArrayList<Seat> opens;
 
     /**
      * Flight Constructor
@@ -105,7 +106,7 @@ public class Flight {
      * @return ArrayList<Seat>
      */
     public ArrayList<Seat> getOpenSeats() {
-        ArrayList<Seat> opens = new ArrayList<Seat>();
+        opens = new ArrayList<Seat>();
         for (int i = 0; i < seats.length; i++) {
             if (seats[i].getAvailability())
                 opens.add(seats[i]);
