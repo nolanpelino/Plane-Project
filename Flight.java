@@ -120,13 +120,18 @@ public class Flight {
     public void printOpenSeats() {
         ArrayList<Seat> opens = getOpenSeats();
         int counter = 0;
-        System.out.print("Open Seats: ");
+        System.out.println("Open Seats: ");
         for (Seat s: opens) {
-            if (counter == 4) { // Used to determine when to start a new line of prints
-                System.out.println("\n" + s.getExactPosition());
-                counter = 0;
-            } else {
-                System.out.println(s.getExactPosition());
+            if (counter == 3) { // Used to determine when to start a new line of prints
+                System.out.print(s.getExactPosition()+"     ");
+                counter++;
+            }
+            else if (counter==6){
+                System.out.print(s.getExactPosition()+ "\n");
+                counter=0;
+            }
+            else {
+                System.out.print(s.getExactPosition()+" ");
                 counter++;
             }
         }

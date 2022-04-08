@@ -202,6 +202,8 @@ public class FlightSystemUI {
 
         if (userAnswer<=flightCounter && userAnswer>0) {
         	bookedFlight = allFlights.get(userAnswer-1);
+            System.out.println("Here are all the open seat for flight "+ userAnswer);
+            bookedFlight.printOpenSeats();
             System.out.println("What seat would you like? (Please enter row and position ex:1a )");
             String seatChoice =scan.next();
         	bookedSeat = bookedFlight.takeSeat(seatChoice);
