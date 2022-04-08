@@ -1,10 +1,10 @@
 [
     {
-        "hotelAddress":"8332 Willow Branch Dr",
-        "hotelState":"SC",
-        "hotelCity":"Columbia",
+        "hotelAddress":"1113 6th Ave",
+        "hotelState":"WA",
+        "hotelCity":"Seattle",
         "price":199,
-        "hotelName":"The Omni",
+        "hotelName":"Crowne Plaza Downtown",
         "hotelStars":4,
         "hotelPool":true,
         "hotelID":"468676b4-9709-455e-941d-bc89e0846f7f",
