@@ -122,11 +122,11 @@ public class Flight {
         int counter = 0;
         System.out.println("Open Seats: ");
         for (Seat s: opens) {
-            if (counter == 3) { // Used to determine when to start a new line of prints
+            if (counter == 2) { // Used to determine when to start a new line of prints
                 System.out.print(s.getExactPosition()+"     ");
                 counter++;
             }
-            else if (counter==6){
+            else if (counter==5){
                 System.out.print(s.getExactPosition()+ "\n");
                 counter=0;
             }

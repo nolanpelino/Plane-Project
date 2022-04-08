@@ -32,8 +32,8 @@
             {"price":"175","seatSection":"Business","row":"5","seatPosition":"F","extraLegRoom":false}],
         "flightlength":250,          
         "flightTV":true,
-        "flightDeparture":"CLT",
-        "flightArrival":"ATL",
+        "flightDeparture":"CAE",
+        "flightArrival":"SEA",
         "flightID":"0ebbf98a-4668-452f-a973-c370e1e40a52",
         "flightNumber":2157,
         "flightAirline":"American",
@@ -73,11 +73,11 @@
         {"price":"150","seatSection":"Business","row":"5","seatPosition":"F","extraLegRoom":false}],
     "flightlength":270,          
     "flightTV":false,
-    "flightDeparture":"CLT",
-    "flightArrival":"ATL",
+    "flightDeparture":"CAE",
+    "flightArrival":"SEA",
     "flightID":"0b5ebe04-ab4b-4fa8-babd-39c2c647e6cc",
     "flightNumber":3459,
-    "flightAirline":"American",
+    "flightAirline":"Spirit",
     "connectingFlight":0
     }
 
