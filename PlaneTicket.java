@@ -21,5 +21,6 @@ public class PlaneTicket {
         System.out.println("Flight " + myFlight.getFlightNumber());
         System.out.println("From " + myFlight.getDeparture() + " to " + myFlight.getArrival());
         System.out.println("Gate " + gate + " Seat " + yourSeat.getExactPosition());
+        System.out.println("Price $"+yourSeat.getPrice()+"0");
     }
 }

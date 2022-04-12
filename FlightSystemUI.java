@@ -171,6 +171,7 @@ public class FlightSystemUI {
      */
     public void bookFlight() throws IOException, ParseException {
         String depPort, arrPort;
+        int flightCounter = 0;
         flights = FlightList.getInstance();
         Flight bookedFlight = null;
         Seat bookedSeat;
@@ -191,23 +192,32 @@ public class FlightSystemUI {
                 iterator.remove();
         }
         for (Flight f : allFlights) {
+            System.out.print(flightCounter+1+". ");
             f.printAllInfo();
+            flightCounter++;
             System.out.println("------------------------------------------");
         }
-        System.out.println("Do you want to book this flight? Y/N? ");
-        String userAnswer = scan.next();
-        if (userAnswer.equalsIgnoreCase("y")) {
-        	bookedFlight = allFlights.get(0);
-        	bookedSeat = bookedFlight.takeSeat("1a"); // Doesn't work as intended
+        System.out.println("Which flight would you like to book? *(enter the flights number) ");
+        int userAnswer = scan.nextInt();
+
+        if (userAnswer<=flightCounter && userAnswer>0) {
+        	bookedFlight = allFlights.get(userAnswer-1);
+            System.out.println("Here are all the open seat for flight "+ userAnswer);
+            bookedFlight.printOpenSeats();
+            System.out.println("What seat would you like? (Please enter row and position ex:1a )");
+            String seatChoice =scan.next();
+        	bookedSeat = bookedFlight.takeSeat(seatChoice);
+            if(bookedSeat==null) {
+                System.out.println("Not a valid seat. Sorry!");
+            }
+            else{
         	PlaneTicket planeTicket = new PlaneTicket(bookedFlight, bookedSeat, bookedFlight.getGate());
         	System.out.println("Your flight has been booked!\n");
         	currentUser.addFlightTicket(planeTicket);
+            }
         	
         }
-        else if(userAnswer.equalsIgnoreCase("n")) {
-        	System.out.println("Restarting flight booking.\n");
-        	bookFlight();
-        }
+
         else {
         	System.out.println("Sorry, thats not a valid answer. Restarting flight booking.\n");
         	bookFlight();

@@ -12,6 +12,7 @@ public class Flight {
     private int flightNumber;
     private String airline;
     private int connectingFlight;
+    ArrayList<Seat> opens;
 
     /**
      * Flight Constructor
@@ -105,7 +106,7 @@ public class Flight {
      * @return ArrayList<Seat>
      */
     public ArrayList<Seat> getOpenSeats() {
-        ArrayList<Seat> opens = new ArrayList<Seat>();
+        opens = new ArrayList<Seat>();
         for (int i = 0; i < seats.length; i++) {
             if (seats[i].getAvailability())
                 opens.add(seats[i]);
@@ -119,13 +120,18 @@ public class Flight {
     public void printOpenSeats() {
         ArrayList<Seat> opens = getOpenSeats();
         int counter = 0;
-        System.out.print("Open Seats: ");
+        System.out.println("Open Seats: ");
         for (Seat s: opens) {
-            if (counter == 4) { // Used to determine when to start a new line of prints
-                System.out.println("\n" + s.getExactPosition());
-                counter = 0;
-            } else {
-                System.out.println(s.getExactPosition());
+            if (counter == 2) { // Used to determine when to start a new line of prints
+                System.out.print(s.getExactPosition()+"     ");
+                counter++;
+            }
+            else if (counter==5){
+                System.out.print(s.getExactPosition()+ "\n");
+                counter=0;
+            }
+            else {
+                System.out.print(s.getExactPosition()+" ");
                 counter++;
             }
         }
