@@ -15,7 +15,7 @@ public class HotelTest {
         UUID hotelID = UUID.fromString(id);
 
         ArrayList<Date> stayDates = new ArrayList<Date>();
-        stayDates.add(today);
+        stayDates.add(today);  // User is looking to stay at what is technically runtime
 
         Hotel tstHotel = new Hotel(roomsList, "address", "city", "state", "name",
          200, hotelID , 4, true);
@@ -33,7 +33,7 @@ public class HotelTest {
         UUID hotelID = UUID.fromString(id);
 
         ArrayList<Date> stayDates = new ArrayList<Date>();
-        stayDates.add(today);
+        stayDates.add(today);  // User is looking to stay at what is technically runtime
         rm.setAvailability(today);  // Sets the room unavailable for the same time the user would be looking for
 
         Hotel tstHotel = new Hotel(roomsList, "address", "city", "state", "name",
