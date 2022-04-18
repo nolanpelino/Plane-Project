@@ -7,7 +7,7 @@ import java.util.UUID;
 public class HotelTest {
     
     @Test
-    public void testShowOpenRooms() {
+    public void testEmptyShowOpenRooms() {
         //Tests with empty ArrayList and No dates
         ArrayList<Room> roomsList = new ArrayList<Room>();
         String id = "468676b4-9709-455e-941d-bc89e0846f7f";
