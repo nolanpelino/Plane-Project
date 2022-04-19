@@ -34,14 +34,14 @@ public class FlightTest {
     @Test 
     public void testGetOpenSeats(){
         ArrayList<Seat> correctSeatArrayList = new ArrayList<>();
-        Seat[] seats = new Seat[30]; 
+        Seat[] seats = new Seat[3]; 
         UUID testUUID = UUID.randomUUID();
         Seat testSeat1 = new Seat(200, "First Class", 1, 'A', true);
         Seat testSeat2 = new Seat(200, "First Class", 1, 'B', true);
         Seat testSeat3 = new Seat(200, "First Class", 1, 'C', true);
         seats[0]=testSeat1;
         seats[1]=testSeat2;
-        seats[3]=testSeat3;
+        seats[2]=testSeat3;
         correctSeatArrayList.add(testSeat1);
         correctSeatArrayList.add(testSeat2);
         correctSeatArrayList.add(testSeat3);
