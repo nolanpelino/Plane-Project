@@ -53,6 +53,21 @@ public class FlightTest {
 
     @Test
     public void testGetNoOpenSeats(){
-
+        ArrayList<Seat> correctSeatArrayList = new ArrayList<>();
+        Seat[] seats = new Seat[3]; 
+        UUID testUUID = UUID.randomUUID();
+        Seat testSeat1 = new Seat(200, "First Class", 1, 'A', true);
+        Seat testSeat2 = new Seat(200, "First Class", 1, 'B', true);
+        Seat testSeat3 = new Seat(200, "First Class", 1, 'C', true);
+        seats[0]=testSeat1;
+        seats[1]=testSeat2;
+        seats[2]=testSeat3;
+        Flight testFlight = new Flight(seats, 200, true, "CLT", "ATL", testUUID, 2209, "American", 0);
+        testFlight.takeSeat("1A");
+        testFlight.takeSeat("1B");
+        testFlight.takeSeat("1C");
+        ArrayList<Seat> testSeatArrayList;
+        testSeatArrayList = testFlight.getOpenSeats();
+        assertEquals(correctSeatArrayList, testSeatArrayList);
     }
 }
