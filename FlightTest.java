@@ -46,7 +46,8 @@ public class FlightTest {
         correctSeatArrayList.add(testSeat2);
         correctSeatArrayList.add(testSeat3);
         Flight testFlight = new Flight(seats, 200, true, "CLT", "ATL", testUUID, 2209, "American", 0);
-        ArrayList<Seat> testSeatArrayList = testFlight.getOpenSeats();
+        ArrayList<Seat> testSeatArrayList;
+        testSeatArrayList = testFlight.getOpenSeats();
         assertEquals(correctSeatArrayList, testSeatArrayList);
     }
 
