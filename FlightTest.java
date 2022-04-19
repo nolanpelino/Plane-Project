@@ -9,7 +9,7 @@ public class FlightTest {
     
     @Test
     public void testTakeOpenSeat(){
-        Seat[] seats = new Seat[30]; 
+        Seat[] seats = new Seat[1]; 
         UUID testUUID = UUID.randomUUID();
         Seat testSeat = new Seat(200, "First Class", 1, 'B', true);
         seats[0]=testSeat;//Sets the test seat to the first seat in the array
@@ -20,7 +20,7 @@ public class FlightTest {
 
     @Test
     public void testTakeNotOpenSeat(){
-        Seat[] seats = new Seat[30]; 
+        Seat[] seats = new Seat[1]; 
         UUID testUUID = UUID.randomUUID();
         Seat testSeat = new Seat(200, "First Class", 1, 'B', true);
         seats[0]=testSeat;
