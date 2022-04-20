@@ -1,18 +1,18 @@
-import org.json.simple.parser.ParseException;
+import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
-import static org.junit.Assert.assertArrayEquals;
-import static org.junit.Assert.assertEquals;
-
 import java.io.IOException;
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.UUID;
 
-public class DataLoaderTest { 
 
+public class UserListTest {
+   
     @Test
-    public void testGetUser() throws IOException, ParseException {
-        // Tetsing to see if getUser correctly obtains all the users from the user.json file
+    public void testGetUser() throws IOException, ParseException, org.json.simple.parser.ParseException {
+        /* Testing to see if getUser correctly obtains all the users from the user.json file.
+        getUser uses the dataloader within its class  */
         
         ArrayList<User> compList = new ArrayList<User>();
         UserList usList = UserList.getInstance();
