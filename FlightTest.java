@@ -9,6 +9,7 @@ public class FlightTest {
     
     @Test
     public void testTakeOpenSeat(){
+        // Tests the seat array with a regular open seat
         Seat[] seats = new Seat[1]; 
         UUID testUUID = UUID.randomUUID();
         Seat testSeat = new Seat(200, "First Class", 1, 'B', true);
@@ -20,6 +21,7 @@ public class FlightTest {
 
     @Test
     public void testTakeNotOpenSeat(){
+        // Tests the seat array with an already taken seat
         Seat[] seats = new Seat[1]; 
         UUID testUUID = UUID.randomUUID();
         Seat testSeat = new Seat(200, "First Class", 1, 'B', true);
@@ -33,6 +35,7 @@ public class FlightTest {
 
     @Test 
     public void testGetOpenSeats(){
+        // Tests the get open seat method with threee open seats
         ArrayList<Seat> correctSeatArrayList = new ArrayList<>();
         Seat[] seats = new Seat[3]; 
         UUID testUUID = UUID.randomUUID();
@@ -53,6 +56,7 @@ public class FlightTest {
 
     @Test
     public void testGetNoOpenSeats(){
+        // Tests the get open seat method with an array of 3 taken seats
         ArrayList<Seat> correctSeatArrayList = new ArrayList<>();
         Seat[] seats = new Seat[3]; 
         UUID testUUID = UUID.randomUUID();
