@@ -29,6 +29,7 @@ public class UserListTest {
         assertEquals(compList, usList.getUsers());
     }
 
+    @Test
     public void testGetUser() throws IOException, org.json.simple.parser.ParseException {
         // Testing to see if getUser returns the specific user we are looking for
         UserList usList = UserList.getInstance();
@@ -40,6 +41,7 @@ public class UserListTest {
         assertEquals(karieUser, returnedUser);
     }
 
+    @Test
     public void testAddUser() throws IOException, org.json.simple.parser.ParseException {
         // Adding a user that already exists (should return false) and seeing if the method fails
         UserList usList = UserList.getInstance();
