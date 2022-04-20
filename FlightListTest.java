@@ -22,9 +22,4 @@ public class FlightListTest {
         Flight actualFlight = new Flight(seats, 200, true, "CLT", "ATL", testUUID, 2209, "American", 0);
         assertEquals(actualFlight, testFlightList.getFlight(2209));
     }
-
-    @Test
-    public void testAddFlightAgain(){
-
-    }
 }
