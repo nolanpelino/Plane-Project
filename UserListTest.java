@@ -39,4 +39,13 @@ public class UserListTest {
         User returnedUser = usList.getUser("KarieMicheals20");
         assertEquals(karieUser, returnedUser);
     }
+
+    public void testAddUser() throws IOException, org.json.simple.parser.ParseException {
+        // Adding a user that already exists (should return false) and seeing if the method fails
+        UserList usList = UserList.getInstance();
+        UUID uuid = UUID.fromString("7244f7ac-a242-417d-9aa5-6ad7fb5fde5b");
+        // Right side (usList.addUser) of the below assertEquals should return false
+        assertEquals(false, usList.addUser("KarieMicheals20", "Applest0Bananas3", 35, "638 W University Boulevard\nOdessa, Texas 79964\nUnited States",
+        true, "ODO", true, false));
+    }
 }
